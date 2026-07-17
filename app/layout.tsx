@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import PageLoader from "@/components/PageLoader";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const heading = Cormorant_Garamond({
   subsets: ["latin"],
@@ -25,7 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${heading.variable} ${body.variable}`}>
-        {children}
+        <PageLoader>{children}</PageLoader>
+        <FloatingWhatsApp />
       </body>
     </html>
   );

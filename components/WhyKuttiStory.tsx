@@ -2,7 +2,7 @@
 
 export default function WhyKuttiStory() {
   return (
-    <section className="bg-[#F8EFDA] py-24">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Top Heading */}
