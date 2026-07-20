@@ -99,7 +99,7 @@ export default function StorySection({
           setEditingStory(null);
           setShowForm(true);
         }}
-          className="rounded-lg bg-amber-500 px-5 py-2.5 font-semibold text-black transition hover:bg-amber-400"
+          className="rounded-lg bg-amber-500 px-5 py-2.5 font-semibold text-white transition hover:bg-amber-400"
         >
           + Add Story
         </button>

@@ -103,7 +103,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Category Filter */}
-        <div className="mx-auto mb-20 max-w-7xl px-6">
+        <div className="mx-auto mb-32 max-w-7xl px-6">
 
         <div className="
           flex
@@ -157,7 +157,7 @@ export default function PortfolioPage() {
 
         {loading ? (
 
-          <div className="mx-auto max-w-7xl px-6 pb-24">
+          <div className="mx-auto mt-16 max-w-7xl px-6 pb-24">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {Array.from({ length: 6 }).map((_, index) => (
                 <div
@@ -172,8 +172,9 @@ export default function PortfolioPage() {
 
         ) : (
 
-          <div className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="mx-auto mt-16 max-w-7xl px-6 pb-24">
 
+           <div className="h-10 bg-white-500"></div> 
             <Masonry
               breakpointCols={breakpointColumnsObj}
               className="masonry-grid"
@@ -244,10 +245,9 @@ export default function PortfolioPage() {
               ))}
 
             </Masonry>
+            </div>
 
-          </div>
-
-
+          
         )}
 
       </main>

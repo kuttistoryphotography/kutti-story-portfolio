@@ -51,45 +51,24 @@ import { motion } from "framer-motion";
       <div className="mb-16 text-center">
 
         <p className="uppercase tracking-[6px] text-[#B79A5F] text-sm">
-          Our Collection
+          OUR PORTFOLIO
         </p>
 
         <h2 className="mt-4 font-heading text-5xl font-light text-[#3F5A4A]">
-          Every Love Story
+          Where Every Frame Tells a Story
           <br />
           Deserves A Timeless Frame
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-gray-500 text-base leading-relaxed">
-          Explore our curated collection of weddings, portraits and cinematic
-          moments captured with emotions, elegance and timeless beauty.
+          Explore our curated collection of weddings, pre-weddings, portraits, and cinematic moments, captured with timeless elegance and heartfelt storytelling.
         </p>
 
       </div>
 
-      {/* Category Filter */}
-      <div className="mb-14 flex flex-wrap justify-center gap-4">
-
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setActiveCategory(category)}
-            className={`
-              rounded-full px-6 py-3 text-sm tracking-wide transition-all duration-300
-              ${
-                activeCategory === category
-                  ? "bg-[#B79A5F] text-white shadow-lg"
-                  : "border border-[#B79A5F]/40 text-[#3F5A4A] hover:bg-[#B79A5F] hover:text-white"
-              }
-            `}
-          >
-            {category}
-          </button>
-        ))}
-
-      </div>
-
+      
       {/* Grid */}
+      <div className="h-8"></div>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="masonry-grid"

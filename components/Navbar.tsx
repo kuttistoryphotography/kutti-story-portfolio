@@ -44,12 +44,13 @@ export default function Navbar() {
     { name: "About", href: "/about" },
     {
       name: "Contact",
-      href: "https://www.kuttistoryphotography.com",
+      href: "https://www.kuttistoryphotography.com/contact-us",
       external: true,
     },
   ];
 
   return (
+  <>
     <header
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-500 ${
         isHome
@@ -75,7 +76,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="relative z-[60] lg:hidden text-white"
+          className="relative z-[70] lg:hidden text-white"
           aria-label="Toggle Menu"
         >
           {menuOpen ? <X size={30} /> : <Menu size={30} />}
@@ -124,47 +125,41 @@ export default function Navbar() {
           })}
              
         </ul>
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div
-            className={`fixed inset-0 z-50 bg-[#849669]/95 backdrop-blur-xl lg:hidden flex items-center justify-center transform transition-all duration-300 ease-out ${
-              menuOpen
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 -translate-y-2 pointer-events-none"
-            }`}
-          >
-            <ul className="flex flex-col items-center gap-8">
-              {navItems.map((item) => (
-                <li key={item.name} className="py-3">
-                  {item.external ? (
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setMenuOpen(false)}
-                      className="uppercase tracking-[3px] text-white hover:text-[#F3D7A2]"
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className={`uppercase tracking-[3px] ${
-                        pathname === item.href
-                          ? "text-[#F3D7A2]"
-                          : "text-white hover:text-[#F3D7A2]"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        
       </nav>
     </header>
+
+    {/* Mobile Menu */}
+    {menuOpen && (
+      <div className="fixed inset-0 top-[88px] z-[60] bg-[#849669] lg:hidden flex items-center justify-center">
+        <ul className="flex flex-col items-center gap-10">
+          {navItems.map((item) => (
+            <li key={item.name}>
+              {item.external ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                  className="uppercase tracking-[4px] text-white text-xl"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="uppercase tracking-[4px] text-white text-xl"
+                >
+                  {item.name}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+  </>
   );
 }

@@ -6,7 +6,7 @@ export default function WhyKuttiStory() {
       <div className="mx-auto max-w-7xl px-6">
 
         {/* Top Heading */}
-        <div className="grid grid-cols-1 lg:grid-cols-[35%_65%] gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-12 items-start">
 
           <h2 className="text-5xl font-light tracking-wide text-[#2F5DB2]">
             WHY KUTTI STORY?
@@ -22,11 +22,10 @@ export default function WhyKuttiStory() {
 
         {/* Testimonial Card */}
 
-        <div className="mt-16 rounded-sm bg-[#F3EEE4] p-12 lg:p-16">
+        <div className="mt-16 rounded-sm bg-[#F3EEE4] px-12 py-14 lg:px-16 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-12 items-center">
 
-          <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-16 items-center">
-
-            {/* Left */}
+         {/* Left */}
 
             <div>
 
@@ -35,7 +34,7 @@ export default function WhyKuttiStory() {
               </div>
 
               <h3
-                className="mt-2 text-5xl lg:text-6xl leading-tight font-light text-[#6F6B63]"
+                className="mt-2 text-4xl lg:text-5xl leading-tight font-light text-[#6F6B63]"
                 style={{ fontFamily: "serif" }}
               >
                 A team that

@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export default function BookingCTA() {
   return (
-    <section className="bg-white py-18">
+    <section className="bg-white pt-18 pb-32">
+      <div className="h-10 bg-white-500"></div> 
       <div className="mx-auto max-w-5xl px-3">
 
         <div className="rounded-[32px] bg-[#849669] px-8 py-10 md:px-20 md:py-12 text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)]">
@@ -21,20 +22,22 @@ export default function BookingCTA() {
             photographs and cinematic films.
           </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
 
-          <Link
-            href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-white px-10 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#849669]"
+          <a
+            href="https://www.kuttistoryphotography.com/contact-us"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 items-center justify-center rounded-full border border-white px-10 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#849669]"
           >
             Book Your Session
-          </Link>
+          </a>
 
           <a
             href="https://wa.me/919342013600"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-full border border-white px-10 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#849669]"
+            className="inline-flex h-11 items-center justify-center rounded-full border border-white px-10 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#849669]"
           >
             Chat on WhatsApp
           </a>
@@ -44,6 +47,7 @@ export default function BookingCTA() {
         </div>
 
       </div>
+      <div className="h-10 bg-white-500"></div> 
     </section>
   );
 }

@@ -42,6 +42,8 @@ export default function FeaturedFilms() {
     ],
   });
 
+  const [selectedVideo, setSelectedVideo] = useState("");
+
   useEffect(() => {
     fetch("/api/homepage")
       .then((res) => res.json())
@@ -55,7 +57,50 @@ export default function FeaturedFilms() {
       .catch(console.error);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedVideo("");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedVideo]);
+
+
   console.log("Cards:", settings.cards);
+
+  const getEmbedUrl = (url: string) => {
+    if (!url) return "";
+
+    if (url.includes("youtu.be/")) {
+      const id = url.split("youtu.be/")[1].split("?")[0];
+      return `https://www.youtube.com/embed/${id}?autoplay=1`;
+    }
+
+    if (url.includes("watch?v=")) {
+      const id = url.split("watch?v=")[1].split("&")[0];
+      return `https://www.youtube.com/embed/${id}?autoplay=1`;
+    }
+
+    return url;
+  };
 
   return (
     <section className="bg-white py-28">
@@ -83,21 +128,27 @@ export default function FeaturedFilms() {
 
           {settings.cards.map((film, index) => (
 
-            <Link
+            <div
               key={index}
-              href={film.videoUrl || "#"}
-              className="group overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              onClick={() => setSelectedVideo(film.videoUrl)}
+              className="group cursor-pointer overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
 
               {/* Thumbnail */}
               <div className="relative aspect-[4/5] overflow-hidden">
 
-                <Image
-                  src={film.thumbnail}
-                  alt={film.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                {film.thumbnail ? (
+                  <Image
+                    src={film.thumbnail}
+                    alt={film.title}
+                    fill
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500">
+                    No Thumbnail
+                  </div>
+                )}
 
                 {/* Dark Overlay */}
                 <div className="absolute inset-0 bg-black/25 transition duration-500 group-hover:bg-black/45" />
@@ -149,7 +200,7 @@ export default function FeaturedFilms() {
 
               </div>
 
-            </Link>
+            </div>
 
           ))}
 
@@ -168,6 +219,38 @@ export default function FeaturedFilms() {
         </div>
 
       </div>
+
+      {/* Video Modal */}
+        {selectedVideo && (
+          <div
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300"          onClick={() => setSelectedVideo("")}
+        >
+          <div
+            className="relative w-full max-w-6xl overflow-hidden rounded-3xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedVideo("")}
+              className="absolute -top-14 right-0 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-2xl text-white backdrop-blur-md transition hover:bg-white/20"
+            >
+              ✕
+            </button>
+
+            {/* Video */}
+            <div className="aspect-video overflow-hidden rounded-3xl bg-black">
+              <iframe
+                src={getEmbedUrl(selectedVideo)}
+                title="Featured Film"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowFullScreen
+                className="h-full w-full"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 }
