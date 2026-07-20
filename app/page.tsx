@@ -1,3 +1,4 @@
+import { HomepageProvider } from "@/context/HomepageContext";
 import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import FeaturedGallery from "@/components/FeaturedGallery";
@@ -12,18 +13,18 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <HomepageProvider>
       <Navbar />
       <HeroSlider />
       <FeaturedGallery />
       <WhyKuttiStory />
-      <Testimonials />
       <FeaturedFilms />
+      <Testimonials />
       <TestimonialsSlider />
       <InstagramFeed />
       <FAQ />
       <BookingCTA />
       <Footer />
-    </main>
+    </HomepageProvider>
   );
 }

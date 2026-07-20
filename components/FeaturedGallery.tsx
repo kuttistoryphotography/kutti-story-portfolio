@@ -126,16 +126,20 @@ import { motion } from "framer-motion";
               }`}
             >
 
-              <CloudinaryImage
-                src={card.image || "/placeholder.jpg"}
-                alt={card.title}
-                fill
-                optimizationWidth={800}
-                sizes="(max-width:768px) 100vw,
-                      (max-width:1200px) 50vw,
-                      33vw"
-                className="object-cover transition duration-700 ease-out group-hover:scale-105"
-              />
+              {card.image ? (
+                <CloudinaryImage
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  optimizationWidth={800}
+                  sizes="(max-width:768px) 100vw,
+                        (max-width:1200px) 50vw,
+                        33vw"
+                  className="object-cover transition duration-700 ease-out group-hover:scale-105"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+              )}
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 

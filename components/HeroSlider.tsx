@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useHomepage } from "@/context/HomepageContext";
 import Image from "next/image";
 
 import Container from "@/components/Container";
@@ -8,6 +9,7 @@ import Container from "@/components/Container";
 import Link from "next/link";
 
 export default function HeroSlider() {
+
   const [current, setCurrent] = useState(0);
 
   const [hero, setHero] = useState({
@@ -22,52 +24,35 @@ export default function HeroSlider() {
   });
 
   const [heroImages, setHeroImages] = useState<string[]>([]);
+  const { homepage, loading } = useHomepage();
 
   useEffect(() => {
-  async function loadHomepage() {
-    try {
-      const res = await fetch("/api/homepage");
-      const data = await res.json();
+    if (!homepage?.hero) return;
 
-      const heroData = data.settings?.hero;
-      console.log("Hero Data:", heroData);
+    const heroData = homepage.hero;
 
-      console.log("Homepage API:", data);
-      console.log("Hero Data:", heroData);
+    setHero({
+      heroSliderImages: heroData.heroSliderImages || [],
+      heading: heroData.heading || "",
+      subheading: heroData.subheading || "",
+      paragraph: heroData.paragraph || "",
+      primaryButtonText:
+        heroData.primaryButtonText || "Explore Portfolio",
+      primaryButtonLink:
+        heroData.primaryButtonLink || "#",
+    });
 
-      if (!heroData) return;
+    if (heroData.heroSliderImages?.length > 0) {
+      const images = heroData.heroSliderImages
+        .map((item: { image: string }) => item.image)
+        .filter((image: string) => image && image.trim() !== "");
 
-      setHero({
-        heroSliderImages: heroData.heroSliderImages || [],
-        heading: heroData.heading || "",
-        subheading: heroData.subheading || "",
-        paragraph: heroData.paragraph || "",
-        primaryButtonText:
-          heroData.primaryButtonText || "Explore Portfolio",
-        primaryButtonLink:
-          heroData.primaryButtonLink || "#",
-      });
-
-      console.log("Primary Button Link:", heroData.primaryButtonLink);
-
-      if (heroData.heroSliderImages?.length > 0) {
-        const images = heroData.heroSliderImages
-          .map((item: { image: string }) => item.image)
-          .filter((image: string) => image && image.trim() !== "");
-
-        setHeroImages(images);
-      } else if (heroData.backgroundImage) {
-        // Fallback to old single image
-        setHeroImages([heroData.backgroundImage]);
-      }
-    } catch (error) {
-      console.error("Failed to load homepage:", error);
+      setHeroImages(images);
+    } else if (heroData.backgroundImage) {
+      setHeroImages([heroData.backgroundImage]);
     }
-  }
-
-    loadHomepage();
-  }, []);
-
+  }, [homepage]);
+  
   useEffect(() => {
     if (heroImages.length <= 1) return;
 
@@ -78,25 +63,34 @@ export default function HeroSlider() {
     return () => clearInterval(timer);
   }, [heroImages]);
 
+
   if (heroImages.length === 0) {
-    return null;
+    return (
+      <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
+        <Container>
+          <div className="relative h-[92vh] w-full overflow-hidden rounded-[40px] bg-gray-200 animate-pulse" />
+        </Container>
+      </section>
+    );
   }
 
   console.log("Hero Images:", heroImages);
-
+ 
   return (
     <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
       <Container>
         <div className="relative h-[92vh] w-full overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
           {/* Hero Images */}
-          {heroImages.map((image, index) => (
+          {heroImages.map((image: string, index: number) => (
             <Image
               key={`${index}-${image}`}
               src={image}
               alt={`Hero ${index + 1}`}
               fill
               priority={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
+              sizes="100vw"
               unoptimized
               className={`absolute inset-0 object-cover transition-all duration-[2500ms] ${
                 current === index

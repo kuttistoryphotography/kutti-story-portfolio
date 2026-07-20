@@ -49,7 +49,7 @@ export default function TestimonialsSlider() {
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           slidesPerView={1}
-          loop
+          loop={testimonials.length >= 2}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
