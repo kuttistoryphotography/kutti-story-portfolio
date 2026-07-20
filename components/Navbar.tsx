@@ -4,11 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +21,18 @@ export default function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   
   const navItems = [
@@ -58,9 +72,18 @@ export default function Navbar() {
           />
         </Link>
 
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="relative z-[60] lg:hidden text-white"
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
+
         {/* Navigation */}
         <ul
-         className="flex items-center gap-14 uppercase tracking-[6px] text-[13px] font-medium">
+         className="hidden lg:flex items-center gap-14 uppercase tracking-[6px] text-[13px] font-medium">
           {navItems.map((item) => {
             const active = !item.external && pathname === item.href;
 
@@ -101,6 +124,46 @@ export default function Navbar() {
           })}
              
         </ul>
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div
+            className={`fixed inset-0 z-50 bg-[#849669]/95 backdrop-blur-xl lg:hidden flex items-center justify-center transform transition-all duration-300 ease-out ${
+              menuOpen
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 -translate-y-2 pointer-events-none"
+            }`}
+          >
+            <ul className="flex flex-col items-center gap-8">
+              {navItems.map((item) => (
+                <li key={item.name} className="py-3">
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMenuOpen(false)}
+                      className="uppercase tracking-[3px] text-white hover:text-[#F3D7A2]"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`uppercase tracking-[3px] ${
+                        pathname === item.href
+                          ? "text-[#F3D7A2]"
+                          : "text-white hover:text-[#F3D7A2]"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </nav>
     </header>
   );
