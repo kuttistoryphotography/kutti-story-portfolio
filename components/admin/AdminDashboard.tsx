@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import DashboardHome from "./dashboard/DashboardHome";
 import StorySection from "./stories/StorySection";
@@ -31,6 +32,7 @@ import FaqSection from "./sections/faq-section";
 
 
 export default function AdminDashboard() {
+  const router = useRouter();
   const menuItems = [
     {
       title: "GENERAL",
@@ -80,6 +82,15 @@ export default function AdminDashboard() {
   const [selectedStoryId, setSelectedStoryId] = useState("");
   const [selectedStoryTitle, setSelectedStoryTitle] = useState("");
 
+  async function handleLogout() {
+    await fetch("/api/admin/logout", {
+      method: "POST",
+    });
+
+    router.push("/admin/login");
+    router.refresh();
+  }
+
   return (
     <div className="flex min-h-screen bg-zinc-950 text-white">
       {/* Sidebar */}
@@ -124,6 +135,14 @@ export default function AdminDashboard() {
             </div>
           ))}
         </nav>
+        <div className="mt-auto pt-6">
+          <button
+            onClick={handleLogout}
+            className="w-full rounded-xl bg-red-600 px-4 py-3 font-medium text-white transition hover:bg-red-700"
+          >
+            Logout
+          </button>
+        </div>
       </aside>
 
       {/* Main */}
