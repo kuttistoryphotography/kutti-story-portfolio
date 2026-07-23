@@ -67,7 +67,7 @@ export default function HeroSlider() {
   if (heroImages.length === 0) {
     return (
       <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
-        <Container>
+        <Container className="max-w-[95vw] 2xl:max-w-[3200px]">
           <div className="relative h-[92vh] w-full overflow-hidden rounded-[40px] bg-gray-200 animate-pulse" />
         </Container>
       </section>
@@ -78,7 +78,7 @@ export default function HeroSlider() {
  
   return (
     <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
-      <Container>
+      <Container className="max-w-[95vw] 2xl:max-w-[3200px]">
         <div className="relative h-[92vh] w-full overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
           {/* Hero Images */}
