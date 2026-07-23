@@ -80,7 +80,7 @@ export default function HeroSlider() {
     <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
       <Container className="max-w-[75vw] 2xl:max-w-[3200px]">
         <div className="h-12 bg-white-500"></div>
-        <div className="relative h-[91vh] w-full overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
+        <div className="relative mx-auto h-[90vh] w-[98%] overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
           {/* Hero Images */}
           {heroImages.map((image: string, index: number) => (
