@@ -56,7 +56,6 @@ export default async function FaqPage() {
          <FaqAccordion faqs={faqs} />
 
         </section>
-        
 
       </main>
 

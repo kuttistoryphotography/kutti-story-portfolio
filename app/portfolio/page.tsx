@@ -80,22 +80,22 @@ export default function PortfolioPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-[#FAFAF8] pt-32">
+      <main className="min-h-screen bg-[#FAFAF8] pt-24 md:pt-32">
 
         {/* Hero */}
-        <section className="px-6 py-20 text-center">
+        <section className="px-4 sm:px-6 py-12 md:py-20 text-center">
 
           <p className="uppercase tracking-[6px] text-sm text-[#B79A5F]">
             Our Collection
           </p>
 
-          <h1 className="mt-4 font-heading text-5xl md:text-6xl font-light text-[#3F5A4A]">
+          <h1 className="mt-4 font-heading text-4xl sm:text-5xl md:text-6xl font-light leading-tight text-[#3F5A4A]">
             Every Love Story
             <br />
             Deserves A Timeless Frame
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#6E6E6E]">
+          <p className="mx-auto mt-5 max-w-2xl px-2 text-base sm:text-lg leading-relaxed text-[#6E6E6E]">
             Explore our curated collection of weddings, bridal portraits and
             cinematic moments captured with emotions, elegance and timeless beauty.
           </p>
@@ -103,14 +103,9 @@ export default function PortfolioPage() {
         </section>
 
         {/* Category Filter */}
-        <div className="mx-auto mb-32 max-w-7xl px-6">
+        <div className="mx-auto mb-16 md:mb-32 max-w-7xl px-4 sm:px-6">
 
-        <div className="
-          flex
-          flex-wrap
-          justify-center
-          gap-5
-        ">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-5">
 
           {categories.map((item) => (
 
@@ -121,10 +116,10 @@ export default function PortfolioPage() {
               backgroundColor: category === item ? "#7F977B" : "white",
               color: category === item ? "white" : "#3F5A4A",
               border: "1px solid #7F977B",
-              padding: "10px 30px",
+              padding: "10px 20px",
               borderRadius: "9999px",
-              fontSize: "12px",
-              letterSpacing: "1.5px",
+              fontSize: "11px",
+              letterSpacing: "1px",
               fontWeight: "600",
               textTransform: "uppercase",
               boxShadow: category === item

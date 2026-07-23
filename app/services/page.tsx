@@ -72,8 +72,8 @@ export default function ServicesPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-white pt-40 pb-24 overflow-hidden">
-        <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <main className="min-h-screen bg-white pt-24 md:pt-40 pb-16 md:pb-24 overflow-hidden">
+        <section className="relative min-h-[70vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
 
             {hero.heroImage && (
               <>
@@ -88,17 +88,17 @@ export default function ServicesPage() {
             )}
 
             {/* Heading */}
-            <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex h-full items-center justify-center">
+            <div className="relative z-10 mx-auto flex h-full max-w-5xl items-center justify-center px-4 sm:px-6 text-center">
              <div>
 
             {/* Small Label */}
             <div className="flex justify-center mb-8">
-              <span className="rounded-full border border-white/30 bg-white/10 backdrop-blur-md px-6 py-2 text-xs uppercase tracking-[0.35em] text-white">
+              <span className="rounded-full border border-white/30 bg-white/10 backdrop-blur-md px-4 sm:px-6 py-2 text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-white">
                 {hero.subheading || "Our Services"}
               </span>
             </div>
 
-              <h1 className="text-6xl md:text-8xl font-extralight leading-[1.05] tracking-tight text-white">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extralight leading-tight md:leading-[1.05] tracking-tight text-white">
                 {hero.heading || (
                     <>
                     Photography

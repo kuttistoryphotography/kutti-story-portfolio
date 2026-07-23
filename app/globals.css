@@ -37,6 +37,7 @@ html {
   scroll-behavior: smooth;
   width: 100%;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* ===========================
@@ -52,6 +53,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overscroll-behavior-x: none;
 }
 
 /* ===========================
@@ -64,6 +67,15 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+video {
+  width: 100%;
 }
 
 /* ===========================
@@ -174,5 +186,24 @@ a:visited {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+.container-responsive {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-responsive {
+    padding-inline: 3rem;
   }
 }

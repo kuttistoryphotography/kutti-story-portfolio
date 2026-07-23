@@ -1408,7 +1408,7 @@ export default function ServicesSection() {
           </div>
         </div>
       )}
-    <div className="h-10 bg-white-500"></div>
+  
     </div>
   );
 }
