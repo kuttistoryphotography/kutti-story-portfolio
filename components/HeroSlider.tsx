@@ -78,8 +78,9 @@ export default function HeroSlider() {
  
   return (
     <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
-      <Container className="max-w-[95vw] 2xl:max-w-[3200px]">
-        <div className="relative h-[92vh] w-full overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
+      <Container className="max-w-[75vw] 2xl:max-w-[3200px]">
+        <div className="h-12 bg-white-500"></div>
+        <div className="relative h-[91vh] w-full overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
           {/* Hero Images */}
           {heroImages.map((image: string, index: number) => (
@@ -123,7 +124,7 @@ export default function HeroSlider() {
 
               <Link
                 href={hero.primaryButtonLink || "/portfolio"}
-                className="inline-block mt-12 rounded-full bg-[#8B7355] px-10 py-4 text-sm uppercase tracking-[5px] text-white shadow-lg transition-all duration-500 hover:bg-[#2C2A28] hover:scale-105"
+                className="inline-block mt-12 rounded-full bg-[#7F977B] px-10 py-4 text-sm uppercase tracking-[5px] text-white shadow-lg transition-all duration-500 hover:bg-[#6C8568] hover:shadow-2xl hover:scale-105"
               >
                 {hero.primaryButtonText || "Explore Portfolio"} →
               </Link>
