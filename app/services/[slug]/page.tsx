@@ -174,7 +174,7 @@ export default async function ServiceDetailsPage({
       <Navbar />
 
       <main className="min-h-screen bg-white pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[1900px] mx-auto px-6">
 
             {service.coverImage && (
             <FadeIn>

@@ -27,7 +27,7 @@ export default function ServicesCardGrid({
 }: Props) {
   return (
     <section className="mt-32 py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1900px] mx-auto px-6">
 
         <div className="text-center mb-16">
 

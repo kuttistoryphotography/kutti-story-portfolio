@@ -103,7 +103,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Category Filter */}
-        <div className="mx-auto mb-16 md:mb-32 max-w-7xl px-4 sm:px-6">
+        <div className="mx-auto mb-16 md:mb-32 max-w-[1900px] px-4 sm:px-6">
 
         <div className="flex flex-wrap justify-center gap-3 md:gap-5">
 
@@ -152,7 +152,7 @@ export default function PortfolioPage() {
 
         {loading ? (
 
-          <div className="mx-auto mt-16 max-w-7xl px-6 pb-24">
+          <div className="mx-auto mt-10 md:mt-16 max-w-[1900px] px-4 sm:px-6 pb-16 md:pb-24">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {Array.from({ length: 6 }).map((_, index) => (
                 <div
@@ -167,7 +167,7 @@ export default function PortfolioPage() {
 
         ) : (
 
-        <div className="mx-auto mt-16 max-w-7xl px-6 pb-24">
+        <div className="mx-auto mt-10 md:mt-16 max-w-[1900px] px-4 sm:px-6 pb-16 md:pb-24">
 
            <div className="h-10 bg-white-500"></div> 
             <Masonry

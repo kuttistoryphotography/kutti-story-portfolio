@@ -27,7 +27,7 @@ export default function InstagramFeed() {
 
   return (
     <section className="bg-white pt-24 pb-48">
-      <div className="mx-auto max-w-7xl px-3">
+      <div className="mx-auto max-w-[1900px] px-3">
 
         <div className="text-center">
 

@@ -102,7 +102,7 @@ export default async function StoryPage({ params }: Props) {
         {/* Story */}
 
         <section className="py-16">
-          <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-[1900px] px-6">
 
           <div className="mb-12">
             <span className="inline-block uppercase tracking-[8px] text-sm text-[#B79A5F]">
@@ -195,7 +195,7 @@ export default async function StoryPage({ params }: Props) {
 
         {/* Gallery */}
 
-        <section className="mx-auto max-w-7xl px-6 py-24">
+        <section className="mx-auto max-w-[1900px] px-6 py-24">
 
           <div className="mb-20 text-center">
 

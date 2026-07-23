@@ -17,24 +17,24 @@ export default function ServicesShowcase({
   image,
 }: Props) {
   return (
-    <section className="pt-40 pb-24 bg-white">
+    <section className="pt-16 md:pt-40 pb-16 md:pb-24 bg-white">
       <div className="h-10 bg-white-500"></div>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-start">
+      <div className="mx-auto max-w-[1900px] px-4 sm:px-6">
+        <div className="grid items-center gap-12 md:gap-16 lg:grid-cols-2 lg:gap-24">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="uppercase tracking-[4px] text-[#8A9A5B] mb-4">
+            <p className="mb-3 text-[11px] sm:text-xs uppercase tracking-[2px] sm:tracking-[4px] text-[#8A9A5B]">
               {subheading}
             </p>
 
-            <h2 className="text-5xl md:text-6xl font-extralight leading-tight tracking-tight mb-8">
+            <h2 className="mb-6 text-4xl sm:text-5xl md:text-6xl font-extralight leading-tight tracking-tight">
               {heading}
             </h2>
 
-            <p className="text-lg leading-9 text-gray-500 font-light max-w-xl">
+            <p className="max-w-xl text-base sm:text-lg leading-7 sm:leading-8 md:leading-9 text-gray-500 font-light">
               {description}
             </p>
           </motion.div>
@@ -44,7 +44,7 @@ export default function ServicesShowcase({
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative w-full h-[520px] rounded-[42px] overflow-hidden shadow-2xl">
+            <div className="relative h-[320px] sm:h-[420px] lg:h-[520px] w-full overflow-hidden rounded-[28px] lg:rounded-[42px] shadow-2xl">
               {image ? (
                 <CloudinaryImage
                   src={image}

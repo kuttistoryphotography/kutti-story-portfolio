@@ -115,7 +115,7 @@ export default function FilmsPage() {
 
         {/* Featured Film */}
 
-        <section className="mx-auto max-w-7xl px-6">
+        <section className="mx-auto max-w-[1900px] px-6">
 
           <h2 className="mb-8 font-heading text-4xl text-[#3F5A4A]">
             Featured Film
@@ -169,7 +169,7 @@ export default function FilmsPage() {
 
         {/* Recent Films */}
 
-        <section className="mx-auto mt-24 max-w-7xl px-6 pb-24">
+        <section className="mx-auto mt-24 max-w-[1900px] px-6 pb-24">
           <div className="h-10 bg-white-500"></div>
 
           <h2 className="mb-10 font-heading text-4xl text-[#3F5A4A]">

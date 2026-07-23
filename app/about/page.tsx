@@ -76,7 +76,7 @@ export default function AboutPage() {
 
         {/* Studio Story */}
 
-        <section className="mx-auto max-w-7xl px-6 pt-28 pb-16">
+        <section className="mx-auto max-w-[1900px] px-6 pt-28 pb-16">
 
            
 
@@ -192,7 +192,7 @@ export default function AboutPage() {
 
         <section className="py-24">
 
-          <div className="mx-auto grid max-w-7xl gap-10 px-6 text-center md:grid-cols-4">
+          <div className="mx-auto grid max-w-[1900px] gap-10 px-6 text-center md:grid-cols-4">
 
             <div>
               <h3 className="font-heading text-5xl text-[#7F977B]">500+</h3>

@@ -3,7 +3,7 @@
 export default function WhyKuttiStory() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1900px] px-6">
 
         {/* Top Heading */}
         <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-12 items-start">
