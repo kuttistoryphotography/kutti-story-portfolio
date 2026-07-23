@@ -30,7 +30,7 @@ export default async function FaqPage() {
     <>
       <Navbar />
 
-      <main className="bg-white min-h-screen pt-32 pb-24">
+      <main className="bg-white min-h-screen pt-20 pb-24">
 
         {/* Hero */}
         <section className="max-w-6xl mx-auto px-6 text-center">
@@ -56,6 +56,7 @@ export default async function FaqPage() {
          <FaqAccordion faqs={faqs} />
 
         </section>
+        
 
       </main>
 

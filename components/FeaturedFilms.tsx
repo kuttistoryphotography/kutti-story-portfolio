@@ -103,7 +103,8 @@ export default function FeaturedFilms() {
   };
 
   return (
-    <section className="bg-white py-28">
+    <section className="bg-white py-20">
+      
       <div className="mx-auto w-full max-w-[1700px] px-8 xl:px-12">
 
         {/* Section Heading */}
@@ -207,11 +208,12 @@ export default function FeaturedFilms() {
         </div>
 
         {/* Button */}
+        <div className="h-4 bg-white-500"></div> 
         <div className="mt-16 text-center">
 
           <Link
             href={settings.buttonLink}
-            className="inline-flex items-center rounded-full border border-[#7A8450] px-10 py-4 text-[#7A8450] transition-all duration-300 hover:bg-[#7A8450] hover:text-white"
+            className="inline-flex items-center rounded-full border border-[#7A8450] px-10 py-3 text-[#7A8450] transition-all duration-300 hover:bg-[#7A8450] hover:text-white"
           >
             {settings.buttonText} →
           </Link>

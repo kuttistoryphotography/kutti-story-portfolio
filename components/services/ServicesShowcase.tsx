@@ -18,6 +18,7 @@ export default function ServicesShowcase({
 }: Props) {
   return (
     <section className="pt-40 pb-24 bg-white">
+      <div className="h-10 bg-white-500"></div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
           <motion.div

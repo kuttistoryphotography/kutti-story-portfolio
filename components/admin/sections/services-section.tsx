@@ -556,7 +556,7 @@ export default function ServicesSection() {
           ? <div className="flex justify-center py-16"><Loader2 className="w-7 h-7 text-white animate-spin" /></div>
           : (
             <div className="space-y-6">
-
+              
               {/* Photography Showcase header */}
               <div className="bg-zinc-900 rounded-2xl p-6 space-y-5">
                 <div>
@@ -573,6 +573,7 @@ export default function ServicesSection() {
                       onChange={(e) => setShowcase({ ...showcase, heading: e.target.value })}
                       className={inputCls} />
                   </div>
+                  
                   <div>
                     <label className={labelCls}>Subheading (label above heading)</label>
                     <input value={showcase.subheading} placeholder="What We Offer"
@@ -1407,7 +1408,7 @@ export default function ServicesSection() {
           </div>
         </div>
       )}
-
+    <div className="h-10 bg-white-500"></div>
     </div>
   );
 }

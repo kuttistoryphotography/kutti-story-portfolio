@@ -27,6 +27,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-white py-24">
+      <div className="h-4 bg-white-500"></div> 
       <div className="mx-auto max-w-6xl px-6">
 
         <div className="text-center">
@@ -69,7 +70,7 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-
+        
       </div>
     </section>
   );

@@ -82,6 +82,7 @@ export default function ServicesCardGrid({
         </div>
 
       </div>
+      <div className="h-10 bg-white-500"></div>
     </section>
   );
 }

@@ -34,6 +34,8 @@ export default function FaqAccordion({ faqs }: Props) {
         />
         </div>
 
+         <div className="h-10 bg-white-500"></div>
+
         <CategoryPills
             categories={[
                 "All",
@@ -49,6 +51,7 @@ export default function FaqAccordion({ faqs }: Props) {
             />
 
     <div className="space-y-4">
+      <div className="h-10 bg-white-500"></div>
       {faqs
         .filter((faq) => {
         const keyword = search.toLowerCase();
@@ -101,7 +104,7 @@ export default function FaqAccordion({ faqs }: Props) {
         );
       })}
     </div>
-
+ <div className="h-10 bg-white-500"></div>
   </>
 );
 }

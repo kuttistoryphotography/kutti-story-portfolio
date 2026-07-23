@@ -151,8 +151,8 @@ export default function FilmsPage() {
 
             </div>
 
-            <div className="p-10">
-
+            <div className="px-10 pt-6 pb-8">
+            
               <p className="uppercase tracking-[5px] text-[#B79A5F] text-sm">
                 {filmsData.featuredFilm.category || "Featured Film"}
               </p>
@@ -170,6 +170,7 @@ export default function FilmsPage() {
         {/* Recent Films */}
 
         <section className="mx-auto mt-24 max-w-7xl px-6 pb-24">
+          <div className="h-10 bg-white-500"></div>
 
           <h2 className="mb-10 font-heading text-4xl text-[#3F5A4A]">
             Recent Films
@@ -229,6 +230,8 @@ export default function FilmsPage() {
             ))}
 
           </div>
+           <div className="h-10 bg-white-500"></div>
+
 
         </section>
 
