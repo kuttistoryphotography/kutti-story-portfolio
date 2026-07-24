@@ -30,32 +30,34 @@ export default async function FaqPage() {
     <>
       <Navbar />
 
-      <main className="bg-white min-h-screen pt-20 pb-24">
+      <main className="bg-[#FAFAF8] min-h-screen pt-24 md:pt-32 pb-24">
 
         {/* Hero */}
-        <section className="max-w-6xl mx-auto px-6 text-center">
+          <section className="max-w-6xl mx-auto px-6 pt-8 md:pt-12 pb-8 md:pb-12 text-center">
+          <div className="h-10 bg-white-500"></div>
+            <p className="uppercase tracking-[6px] text-sm text-[#B79A5F]">
+              SUPPORT
+            </p>
 
-          <p className="text-[#8A9A7B] uppercase tracking-[0.3em]">
-            Support
-          </p>
+            <h1 className="mt-5 font-heading text-5xl md:text-7xl font-light leading-[1.1] text-[#2D2D2D]">
+              Frequently Asked
+              <br />
+              Questions
+            </h1>
 
-          <h1 className="mt-4 text-5xl md:text-6xl font-light">
-            Frequently Asked Questions
-          </h1>
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 font-light text-[#6E6E6E]">
+              Find answers to the most common questions about our photography services,
+              wedding packages, bookings and everything you need before your special day.
+            </p>
 
-          <p className="mt-6 max-w-2xl mx-auto text-gray-600 leading-8">
-            Find answers to the most common questions about our
-            photography services.
-          </p>
-
-        </section>
+          </section>
 
         {/* FAQ List */}
-        <section className="max-w-4xl mx-auto px-6 mt-20">
+          <section className="max-w-5xl mx-auto px-6 mt-12 md:mt-20">
 
-         <FaqAccordion faqs={faqs} />
+          <FaqAccordion faqs={faqs} />
 
-        </section>
+          </section>
 
       </main>
 

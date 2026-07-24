@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 import { connectDB } from "@/lib/mongodb";
 import Service from "@/models/Service";
@@ -173,17 +174,20 @@ export default async function ServiceDetailsPage({
 
       <Navbar />
 
-      <main className="min-h-screen bg-white pt-32 pb-24">
+      <main className="min-h-screen bg-white pt-20 md:pt-32 pb-16 md:pb-24">
         <div className="max-w-[1900px] mx-auto px-6">
 
             {service.coverImage && (
             <FadeIn>
-                <div className="relative h-[600px] overflow-hidden rounded-3xl mb-12">
+                <div className="relative aspect-[4/5] md:aspect-[16/7] overflow-hidden rounded-3xl mb-12">
 
-                <img
-                    src={service.coverImage}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
+                <CloudinaryImage
+                  src={service.coverImage}
+                  alt={service.title}
+                  fill
+                  optimizationWidth={1800}
+                  sizes="100vw"
+                  className="object-cover"
                 />
 
                 <div className="absolute inset-0 bg-black/40" />

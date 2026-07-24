@@ -114,29 +114,29 @@ export default function FeaturedFilms() {
             {settings.smallTitle}
           </p>
 
-          <h2 className="mt-5 text-5xl md:text-6xl font-light text-[#3D3D3D]">
+          <h2 className="mt-5 text-3xl md:text-5xl lg:text-6xl font-light text-[#3D3D3D]">
             {settings.heading}
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
+          <p className="mx-auto mt-6 max-w-3xl text-sm md:text-lg leading-7 md:leading-8 text-gray-600">
             {settings.description}
           </p>
 
         </div>
 
         {/* Film Cards */}
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-8 lg:grid-cols-3 2xl:grid-cols-4">
 
           {settings.cards.map((film, index) => (
 
             <div
               key={index}
               onClick={() => setSelectedVideo(film.videoUrl)}
-              className="group cursor-pointer overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+              className="group cursor-pointer overflow-hidden rounded-2xl md:rounded-3xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
 
               {/* Thumbnail */}
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-square md:aspect-[4/5] overflow-hidden">
 
                 {film.thumbnail ? (
                   <Image
@@ -155,7 +155,7 @@ export default function FeaturedFilms() {
                 <div className="absolute inset-0 bg-black/25 transition duration-500 group-hover:bg-black/45" />
 
                 {/* Duration */}
-                <div className="absolute right-5 top-5 rounded-full bg-white/90 px-4 py-1 text-xs font-semibold text-[#3D3D3D]">
+                <div className="hidden md:block absolute right-5 top-5 rounded-full bg-white/90 px-4 py-1 text-xs font-semibold text-[#3D3D3D]">
                   {film.duration}
                 </div>
 
@@ -163,7 +163,7 @@ export default function FeaturedFilms() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div
                     className="
-                      flex h-20 w-20 items-center justify-center
+                          flex h-12 w-12 md:h-20 md:w-20 items-center justify-center
                       rounded-full
                       border border-white/40
                       bg-white/15
@@ -179,7 +179,7 @@ export default function FeaturedFilms() {
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="white"
-                      className="ml-1 h-8 w-8"
+                      className="ml-0.5 h-5 w-5 md:h-8 md:w-8"
                     >
                       <path d="M8 5v14l11-7z" />
                     </svg>
@@ -189,7 +189,7 @@ export default function FeaturedFilms() {
               </div>
 
               {/* Content */}
-              <div className="p-8">
+              <div className="hidden md:block p-8">
 
                 <p className="uppercase tracking-[4px] text-[#7A8450] text-xs">
                   {film.category}

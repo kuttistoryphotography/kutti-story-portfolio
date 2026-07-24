@@ -103,8 +103,6 @@ ol {
 =========================== */
 button {
   cursor: pointer;
-  border: none;
-  background: transparent;
   font: inherit;
 }
 
@@ -177,6 +175,15 @@ a:visited {
   margin-bottom: 24px;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+section {
+  overflow-x: clip;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -206,4 +213,44 @@ a:visited {
   .container-responsive {
     padding-inline: 3rem;
   }
+}
+
+/* Hide horizontal scrollbar */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Premium Horizontal Scroll */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }

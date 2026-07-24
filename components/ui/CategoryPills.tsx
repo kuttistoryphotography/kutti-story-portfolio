@@ -12,48 +12,103 @@ export default function CategoryPills({
   onSelect,
 }: Props) {
   return (
-    <div className="mb-12 flex flex-wrap items-center justify-center gap-6">
-      {categories.map((category) => {
-        const active = selected === category;
+    <div className="mb-12">
 
-        return (
-          <button
-            key={category}
-            onClick={() => onSelect(category)}
-            style={{
-                backgroundColor: active ? "#7F977B" : "white",
-                color: active ? "white" : "#3F5A4A",
-                border: "1px solid #7F977B",
-                padding: "10px 30px",
-                borderRadius: "9999px",
-                fontSize: "12px",
-                letterSpacing: "1.5px",
-                fontWeight: "600",
-                textTransform: "uppercase",
-                minWidth: "180px",
-                cursor: "pointer",
-                boxShadow: active
-                ? "0 12px 25px rgba(127,151,123,0.45)"
-                : "0 6px 15px rgba(0,0,0,0.08)",
-                transition: "all .3s ease",
-            }}
-            onMouseEnter={(e) => {
-                if (!active) {
-                e.currentTarget.style.backgroundColor = "#7F977B";
-                e.currentTarget.style.color = "white";
+      {/* Mobile */}
+      <div className="relative md:hidden">
+
+        {/* Left Fade */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-8 bg-gradient-to-r from-white to-transparent" />
+
+        {/* Right Fade */}
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-8 bg-gradient-to-l from-white to-transparent" />
+
+        <div
+          className="
+            flex
+            flex-nowrap
+            items-center
+            gap-3
+            overflow-x-auto
+            whitespace-nowrap
+            px-4
+            pb-2
+            scrollbar-hide
+            scroll-smooth
+          "
+        >
+          {categories.map((category) => {
+            const active = selected === category;
+
+            return (
+              <button
+                key={category}
+                onClick={() => onSelect(category)}
+                className={`
+                  !inline-flex
+                  !items-center
+                  !justify-center
+                  !flex-shrink-0
+                  !rounded-full
+                  !border
+                  !border-[#7F977B]
+                  !px-6
+                  !h-11
+                  !whitespace-nowrap
+                  !text-[11px]
+                  !font-semibold
+                  !uppercase
+                  !tracking-[2px]
+                  transition-all
+                  duration-300
+                  ${
+                    active
+                      ? "!bg-[#7F977B] !text-white shadow-lg"
+                      : "!bg-white !text-[#3F5A4A]"
+                  }
+                `}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:flex flex-wrap justify-center gap-5">
+
+        {categories.map((category) => {
+          const active = selected === category;
+
+          return (
+            <button
+              key={category}
+              onClick={() => onSelect(category)}
+              className={`
+                rounded-full
+                border
+                px-8
+                py-3
+                text-xs
+                uppercase
+                tracking-[2px]
+                transition-all
+                duration-300
+                ${
+                  active
+                    ? "bg-[#7F977B] text-white border-[#7F977B] shadow-lg"
+                    : "bg-white text-[#3F5A4A] border-[#7F977B]"
                 }
-            }}
-            onMouseLeave={(e) => {
-                if (!active) {
-                e.currentTarget.style.backgroundColor = "white";
-                e.currentTarget.style.color = "#3F5A4A";
-                }
-            }}
+              `}
             >
-            {category}
-          </button>
-        );
-      })}
+              {category}
+            </button>
+          );
+        })}
+
+      </div>
+
     </div>
   );
 }
