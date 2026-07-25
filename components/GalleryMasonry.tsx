@@ -54,6 +54,7 @@ export default function GalleryMasonry({ photos }: Props) {
               {block[4] && (
                 <ImageCard photo={block[4]} className="aspect-[3/5]" />
               )}
+              <div className="h-0 bg-white-500"></div>
             </div>
           );
         }
