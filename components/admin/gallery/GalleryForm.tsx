@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import GalleryUpload from "./GalleryUpload";
-import { GalleryItem } from "./GallerySection";
+import type { GalleryItem } from "./types";
 import { CATEGORIES } from "@/lib/categories";
+
+type CheckSeo = GalleryItem["seo"];
 
 
 interface Props {
@@ -24,7 +26,9 @@ export default function GalleryForm({
   const [image, setImage] = useState(photo?.image || "");
   const [featured, setFeatured] = useState(photo?.featured || false);
 
-  const [metaTitle, setMetaTitle] = useState(photo?.seo?.metaTitle || "");
+  const [metaTitle, setMetaTitle] = useState(
+    (photo as any)?.seo?.metaTitle || ""
+  );
   const [metaDescription, setMetaDescription] = useState(photo?.seo?.metaDescription || "");
   const [canonicalUrl, setCanonicalUrl] = useState(photo?.seo?.canonicalUrl || "");
   const [keywords, setKeywords] = useState(

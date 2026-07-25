@@ -1,6 +1,6 @@
 "use client";
 
-import { GalleryItem } from "./GallerySection";
+import type { GalleryItem } from "./types";
 
 interface Props {
   photos: GalleryItem[];
