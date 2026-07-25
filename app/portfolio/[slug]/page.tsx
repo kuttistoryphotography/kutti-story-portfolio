@@ -137,7 +137,7 @@ export default async function StoryPage({ params }: Props) {
 
         {/* Hero */}
 
-        <section className="relative min-h-[90vh] overflow-hidden">
+        <section className="relative h-[100vh] overflow-hidden">
 
           <CloudinaryImage
             src={story.coverImage}
@@ -146,7 +146,10 @@ export default async function StoryPage({ params }: Props) {
             preload
             optimizationWidth={1600}
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-center"
+            style={{
+              objectPosition: "center 30%",
+            }}
           />
 
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/75" />
@@ -199,101 +202,100 @@ export default async function StoryPage({ params }: Props) {
 
         {/* Story */}
 
-        <section className="py-16">
-          <div className="mx-auto max-w-[1900px] px-6">
+        {/* Story */}
+        <section className="py-20">
+           <div className="mx-auto w-full max-w-[2400px] px-14 lg:px-20">
 
-          <div className="mb-12">
-            <span className="inline-block uppercase tracking-[8px] text-sm text-[#B79A5F]">
-              Story
-            </span>
+            {/* Section Heading */}
+            <div className="mb-16">
+              <span className="inline-block uppercase tracking-[8px] text-sm text-[#B79A5F]">
+                Story
+              </span>
 
-            <h2 className="mt-3 font-heading text-5xl font-light text-[#3F5A4A]">
-              Our Story
-            </h2>
+              <h2 className="mt-3 font-heading text-5xl font-light text-[#3F5A4A]">
+                Our Story
+              </h2>
 
-            <div className="mt-6 h-px w-20 bg-[#D9C9A8]" />
-            
-          </div>
-
-          <div className="grid grid-cols-1 items-start gap-20 lg:grid-cols-3">
-
-            {/* Story */}
-
-            <div className="lg:col-span-2">
-              <p className="text-[19px] leading-[2.2] text-[#4B5563] whitespace-pre-line">
-                {story.description}
-              </p>
+              <div className="mt-6 h-px w-20 bg-[#D9C9A8]" />
             </div>
 
-            {/* Details */}
+            {/* Content */}
+            <div className="grid grid-cols-1 lg:grid-cols-[2.4fr_420px] gap-20 items-start">
 
-            <div className="lg:sticky lg:top-32 p-8">
-
-              <h3 className="mb-8 font-heading text-4xl font-light text-[#3F5A4A]">
-                Details
-              </h3>
-
-              <div className="space-y-6">
-
-                <div>
-                  <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
-                    Location
-                  </p>
-
-                  <p className="mt-2 text-lg text-[#445A4A]">
-                    {story.location}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
-                    Category
-                  </p>
-
-                  <p className="mt-2 text-lg text-[#445A4A]">
-                    {story.category}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
-                    Date
-                  </p>
-
-                  <p className="mt-2 text-lg text-[#445A4A]">
-                    {story.date
-                      ? new Date(story.date).toLocaleDateString("en-GB", {
-                          day: "numeric",
-                          month: "long",
-                          year: "numeric",
-                        })
-                      : "-"}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
-                    Photography
-                  </p>
-
-                  <p className="mt-2 text-lg text-[#445A4A]">
-                    Kutti Story Photography
-                  </p>
-                </div>
-
+              {/* Story */}
+              <div>
+                <p className="text-[19px] leading-[2.2] text-[#4B5563] whitespace-pre-line">
+                  {story.description}
+                </p>
               </div>
 
+              {/* Details */}
+              <aside className="sticky top-32">
+
+                <div className="sticky top-32 pl-8 border-0 border-[#D8C9A8]">
+
+                  <h3 className="mb-8 font-heading text-4xl font-light text-[#3F5A4A]">
+                    Details
+                  </h3>
+
+                  <div className="space-y-6">
+
+                    <div>
+                      <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
+                        Location
+                      </p>
+                      <p className="mt-2 text-lg text-[#445A4A]">
+                        {story.location}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
+                        Category
+                      </p>
+                      <p className="mt-2 text-lg text-[#445A4A]">
+                        {story.category}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
+                        Date
+                      </p>
+                      <p className="mt-2 text-lg text-[#445A4A]">
+                        {story.date
+                          ? new Date(story.date).toLocaleDateString("en-GB", {
+                              day: "numeric",
+                              month: "long",
+                              year: "numeric",
+                            })
+                          : "-"}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs uppercase tracking-[5px] text-[#B79A5F]">
+                        Photography
+                      </p>
+                      <p className="mt-2 text-lg text-[#445A4A]">
+                        Kutti Story Photography
+                      </p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </aside>
+
             </div>
 
           </div>
-
-        </div>
-
-       </section>
+        </section>
 
         {/* Gallery */}
 
-        <section className="mx-auto max-w-[1900px] px-6 py-24">
+        <section className="mx-auto max-w-7xl px-8 lg:px-12 xl:px-16 py-24">
 
           <div className="mb-20 text-center">
 
