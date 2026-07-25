@@ -171,7 +171,11 @@ export default function GalleryForm({
           </select>
         </div>
 
-        <GalleryUpload onUpload={(urls) => setImage(urls[0] || "")} />
+        <GalleryUpload onUpload={(url) => setImage(url)} />
+
+        <p className="mt-2 text-xs text-green-400 break-all">
+          Image URL: {image}
+        </p>
 
         {image && (
         <img
