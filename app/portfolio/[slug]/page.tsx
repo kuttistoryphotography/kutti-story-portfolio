@@ -204,7 +204,7 @@ export default async function StoryPage({ params }: Props) {
 
         {/* Story */}
         <section className="py-20">
-           <div className="mx-auto w-full max-w-[2400px] px-14 lg:px-20">
+           <div className="mx-auto w-full max-w-[1680px] px-14 lg:px-20">
 
             {/* Section Heading */}
             <div className="mb-16">

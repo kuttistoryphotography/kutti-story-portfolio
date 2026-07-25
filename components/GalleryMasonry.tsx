@@ -1,8 +1,6 @@
 "use client";
 
 import CloudinaryImage from "@/components/CloudinaryImage";
-import Masonry from "react-masonry-css";
-import { optimizeCloudinaryImage } from "@/lib/cloudinary-image";
 
 interface GalleryPhoto {
   _id: string;
@@ -14,35 +12,75 @@ interface Props {
   photos: GalleryPhoto[];
 }
 
-const breakpointColumnsObj = {
-  default: 3,
-  1024: 2,
-  640: 1,
-};
-
 export default function GalleryMasonry({ photos }: Props) {
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className="masonry-grid"
-      columnClassName="masonry-grid_column"
+    <div className="space-y-0">
+      {Array.from({ length: Math.ceil(photos.length / 5) }).map(
+        (_, blockIndex) => {
+          const start = blockIndex * 5;
+          const block = photos.slice(start, start + 5);
+
+          return (
+            <div
+              key={blockIndex}
+              className="grid grid-cols-2 gap-3"
+            >
+              {/* Image 1 */}
+              {block[0] && (
+                <ImageCard photo={block[0]} className="aspect-[3/5]" />
+              )}
+
+              {/* Image 2 */}
+              {block[1] && (
+                <ImageCard photo={block[1]} className="aspect-[3/5]" />
+              )}
+
+              {/* Image 3 Full Width */}
+              {block[2] && (
+                <div className="col-span-2">
+                  <ImageCard
+                    photo={block[2]}
+                    className="aspect-[16/9]"
+                  />
+                </div>
+              )}
+
+              {/* Image 4 */}
+              {block[3] && (
+                <ImageCard photo={block[3]} className="aspect-[3/5]" />
+              )}
+
+              {/* Image 5 */}
+              {block[4] && (
+                <ImageCard photo={block[4]} className="aspect-[3/5]" />
+              )}
+            </div>
+          );
+        }
+      )}
+    </div>
+  );
+}
+
+function ImageCard({
+  photo,
+  className,
+}: {
+  photo: GalleryPhoto;
+  className: string;
+}) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-sm  ${className}`}
     >
-      {photos.map((photo) => (
-        <div
-         key={photo._id}
-         className="group mb-6 overflow-hidden rounded-[28px]"
-        >
-        <CloudinaryImage
-          src={photo.image}
-          alt={photo.title}
-          width={700}
-          height={900}
-          optimizationWidth={1000}
-          loading="lazy"
-          className="h-auto w-full rounded-[28px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-        />
-        </div>
-      ))}
-    </Masonry>
+      <CloudinaryImage
+        src={photo.image}
+        alt={photo.title}
+        fill
+        optimizationWidth={1200}
+        loading="lazy"
+        className="object-cover transition duration-700 hover:scale-105"
+      />
+    </div>
   );
 }
