@@ -21,6 +21,7 @@ export async function PUT(
         seoTitle: body.seoTitle,
         metaDescription: body.metaDescription,
         canonicalUrl: body.canonicalUrl,
+        keywords: body.keywords ?? [],
 
         coverImage: body.coverImage,
         category: body.category,

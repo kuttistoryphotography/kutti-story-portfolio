@@ -41,7 +41,7 @@ export default function GalleryTable({
       </div>
     );
   }
-
+console.log("Gallery Photos:", photos);
   return (
     <div className="grid md:grid-cols-3 xl:grid-cols-4 gap-6">
       {photos.map((photo) => (
@@ -50,10 +50,14 @@ export default function GalleryTable({
           className="rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800"
         >
           <img
-            src={photo.image}
-            alt={photo.title}
-            className="w-full h-60 object-cover"
-          />
+  src={photo.image}
+  alt={photo.title}
+  className="w-full h-60 object-cover"
+  onError={(e) => {
+    console.log("Broken image:", photo);
+    console.log("Image URL:", photo.image);
+  }}
+/>
 
           <div className="p-4 space-y-2">
             <h2 className="font-bold">{photo.title}</h2>

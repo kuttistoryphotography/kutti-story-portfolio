@@ -23,11 +23,38 @@ const PortfolioSchema = new Schema(
       default: "",
     },
 
-    gallery: [
-      {
-        image: String,
+    seo: {
+      metaTitle: {
+        type: String,
+        default: "",
       },
-    ],
+      metaDescription: {
+        type: String,
+        default: "",
+      },
+      canonicalUrl: {
+        type: String,
+        default: "",
+      },
+      keywords: {
+        type: [String],
+        default: [],
+      },
+    },
+
+    gallery: [
+  {
+    image: {
+      type: String,
+      required: true,
+    },
+
+    public_id: {
+      type: String,
+      default: "",
+    },
+  },
+],
 
     featured: {
       type: Boolean,

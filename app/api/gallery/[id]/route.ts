@@ -21,12 +21,30 @@ export async function PUT(
 
     const photo = await Gallery.findByIdAndUpdate(
       id,
-      body,
+      {
+        title: body.title,
+        image: body.image,
+        public_id: body.public_id,
+        category: body.category,
+        featured: body.featured,
+        order: body.order,
+
+        seo: {
+          metaTitle: body.seo?.metaTitle || "",
+          metaDescription: body.seo?.metaDescription || "",
+          canonicalUrl: body.seo?.canonicalUrl || "",
+          keywords: body.seo?.keywords || [],
+          ogTitle: body.seo?.ogTitle || "",
+          ogDescription: body.seo?.ogDescription || "",
+          geoTitle: body.seo?.geoTitle || "",
+          geoDescription: body.seo?.geoDescription || "",
+        },
+      },
       {
         new: true,
+        runValidators: true,
       }
     );
-
     return NextResponse.json({
       success: true,
       photo,

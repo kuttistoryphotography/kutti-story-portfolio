@@ -31,6 +31,11 @@ const StorySchema = new Schema(
       trim: true,
     },
 
+    keywords: {
+      type: [String],
+      default: [],
+    },
+
     coverImage: {
       type: String,
       required: true,

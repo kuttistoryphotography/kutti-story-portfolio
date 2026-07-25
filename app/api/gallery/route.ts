@@ -48,6 +48,17 @@ export async function POST(request: Request) {
       category: body.category || "Wedding",
       featured: body.featured ?? false,
       order: body.order || 0,
+
+      seo: {
+        metaTitle: body.seo?.metaTitle || "",
+        metaDescription: body.seo?.metaDescription || "",
+        canonicalUrl: body.seo?.canonicalUrl || "",
+        keywords: body.seo?.keywords || [],
+        ogTitle: body.seo?.ogTitle || "",
+        ogDescription: body.seo?.ogDescription || "",
+        geoTitle: body.seo?.geoTitle || "",
+        geoDescription: body.seo?.geoDescription || "",
+      },
     });
 
     return NextResponse.json(

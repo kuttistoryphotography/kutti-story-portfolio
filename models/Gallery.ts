@@ -14,6 +14,41 @@ const GallerySchema = new Schema(
       trim: true,
     },
 
+    seo: {
+      metaTitle: {
+        type: String,
+        default: "",
+      },
+      metaDescription: {
+        type: String,
+        default: "",
+      },
+      canonicalUrl: {
+        type: String,
+        default: "",
+      },
+      keywords: {
+        type: [String],
+        default: [],
+      },
+      ogTitle: {
+        type: String,
+        default: "",
+      },
+      ogDescription: {
+        type: String,
+        default: "",
+      },
+      geoTitle: {
+        type: String,
+        default: "",
+      },
+      geoDescription: {
+        type: String,
+        default: "",
+      },
+    },
+
     image: {
       type: String,
       required: true,

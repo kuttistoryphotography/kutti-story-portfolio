@@ -41,6 +41,7 @@ export default function StoryForm({
     const [seoTitle, setSeoTitle] = useState("");
     const [metaDescription, setMetaDescription] = useState("");
     const [canonicalUrl, setCanonicalUrl] = useState("");
+    const [keywords, setKeywords] = useState("");
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("Wedding");
     const [location, setLocation] = useState("");
@@ -70,7 +71,17 @@ export default function StoryForm({
         `Capture timeless memories with our ${title} story by Kutti Story Photography. Professional photography in Madurai with cinematic storytelling and premium albums.`
       );
 
-      setCanonicalUrl(`/stories/${slug}`);
+      setCanonicalUrl(`/portfolio/${slug}`);
+
+        setKeywords(
+          [
+            title,
+            "Wedding Photography Madurai",
+            "Best Wedding Photographer Madurai",
+            "Tamil Wedding Photography",
+            "Kutti Story Photography",
+          ].join(", ")
+        );
     };
 
     const seoChecks = [
@@ -150,6 +161,11 @@ export default function StoryForm({
             seoTitle,
             metaDescription,
             canonicalUrl,
+
+            keywords: keywords
+            .split(",")
+            .map((k: string) => k.trim())
+            .filter((k: string) => k.length > 0),
 
             coverImage,
             category,
@@ -477,6 +493,25 @@ export default function StoryForm({
                   placeholder="/stories/your-story-slug"
                   className="w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-3"
                 />
+              </div>
+
+              {/* Keywords */}
+              <div>
+                <label className="mb-2 block text-sm text-zinc-400">
+                  SEO Keywords
+                </label>
+
+                <textarea
+                  rows={3}
+                  value={keywords}
+                  onChange={(e) => setKeywords(e.target.value)}
+                  placeholder="Wedding Photography Madurai, Best Wedding Photographer Madurai, Candid Wedding Photography..."
+                  className="w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-3"
+                />
+
+                <p className="mt-2 text-xs text-zinc-500">
+                  Separate keywords with commas.
+                </p>
               </div>
 
               {/* Google Search Preview */}

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { connectDB } from "@/lib/mongodb";
 import Story from "@/models/Story";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import Gallery from "@/models/Gallery";
 import GalleryMasonry from "@/components/GalleryMasonry";
 import CommentSection from "@/components/CommentSection";
@@ -12,6 +13,83 @@ interface Props {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  await connectDB();
+
+  const { slug } = await params;
+
+  const story: any = await Story.findOne({ slug }).lean();
+
+  const canonical =
+    story.canonicalUrl?.startsWith("http")
+      ? story.canonicalUrl
+      : `https://www.kuttistoryphotography.com${
+          story.canonicalUrl || `/portfolio/${story.slug}`
+        }`;
+
+  return {
+    metadataBase: new URL("https://www.kuttistoryphotography.com"),
+
+    title:
+      story.seoTitle ||
+      `${story.title} | Kutti Story Photography`,
+
+    description: story.metaDescription,
+
+    keywords: story.keywords || [],
+
+    alternates: {
+      canonical,
+    },
+
+    openGraph: {
+      title:
+        story.seoTitle ||
+        `${story.title} | Kutti Story Photography`,
+
+      description: story.metaDescription,
+
+      url: canonical,
+
+      type: "website",
+      siteName: "Kutti Story Photography",
+      locale: "en_IN",
+
+      images: [
+        {
+          url: story.coverImage,
+          width: 1200,
+          height: 630,
+          alt: story.title,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title:
+        story.seoTitle ||
+        `${story.title} | Kutti Story Photography`,
+      description: story.metaDescription,
+      images: [story.coverImage],
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+  };
 }
 
 export default async function StoryPage({ params }: Props) {
@@ -31,9 +109,29 @@ export default async function StoryPage({ params }: Props) {
       .sort({ order: 1 })
       .lean();
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Photograph",
+    name: story.title,
+    description: story.metaDescription,
+    image: story.coverImage,
+    creator: {
+      "@type": "Organization",
+      name: "Kutti Story Photography",
+    },
+    url: `https://www.kuttistoryphotography.com/portfolio/${story.slug}`,
+  };
+
   return (
     <>
       <Navbar />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
 
       <main className="bg-[#FAFAF8] pt-28">
 
@@ -239,5 +337,6 @@ export default async function StoryPage({ params }: Props) {
 
       <Footer />
     </>
+    
   );
 }
