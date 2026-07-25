@@ -4,13 +4,7 @@ import { useEffect, useState } from "react";
 import GalleryTable from "./GalleryTable";
 import GalleryForm from "./GalleryForm";
 
-export interface GalleryItem {
-  _id?: string;
-  title: string;
-  image: string;
-  category: string;
-  featured: boolean;
-}
+import type { GalleryItem } from "./types";
 
 interface Props {
   storyId: string;

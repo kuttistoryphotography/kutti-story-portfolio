@@ -6,6 +6,8 @@ import { writeFile, remove } from "fs-extra";
 
 export async function POST(request: Request) {
   try {
+    console.time("Total Upload");
+
     const formData = await request.formData();
 
     const file = formData.get("file") as File | null;
@@ -20,20 +22,31 @@ export async function POST(request: Request) {
       );
     }
 
+    console.time("Write Temp File");
+
     const bytes = Buffer.from(await file.arrayBuffer());
 
-    const tempFile = join(
-      tmpdir(),
-      `${Date.now()}-${file.name}`
-    );
+    const tempFile = join(tmpdir(), `${Date.now()}-${file.name}`);
 
     await writeFile(tempFile, bytes);
 
+    console.timeEnd("Write Temp File");
+
+    console.time("Cloudinary Upload");
+
     const result = await cloudinary.uploader.upload(tempFile, {
       folder: "kutti-story",
+      resource_type: "image",
+      timeout: 600000, // 10 minutes
     });
 
+    console.log(result);
+
+    console.timeEnd("Cloudinary Upload");
+
     await remove(tempFile);
+
+    console.timeEnd("Total Upload");
 
     return NextResponse.json({
       success: true,
