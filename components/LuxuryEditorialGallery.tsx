@@ -102,7 +102,7 @@ export default function LuxuryEditorialGallery({
                 ))}
             </div>
             ) : null}
-
+            <div className="h-1 bg-white-500"></div>
           </div>
 
         );
