@@ -9,6 +9,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 
+import LuxuryEditorialGallery from "@/components/LuxuryEditorialGallery";
+
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -209,38 +211,36 @@ export default async function ServiceDetailsPage({
            </p>
             )}
 
-          <div className="mt-12 max-w-3xl">
+          <div className="mt-12 mx-auto w-full max-w-[1600px] px-6 lg:px-10">
             <p className="text-lg leading-8 text-gray-600">
-                {service.description}
+              {service.description}
             </p>
           </div>
 
           {whatsapp && (
-            <Link
+            <div className="mt-10 flex justify-center">
+              <Link
                 href={`https://wa.me/${whatsapp}?text=Hi, I am interested in ${service.title}`}
                 target="_blank"
-                className="inline-flex mt-8 rounded-full bg-[#8A9A7B] px-8 py-3 text-white font-medium hover:opacity-90 transition"
-            >
+                className="rounded-full bg-[#8A9A7B] px-8 py-3 text-white font-medium hover:opacity-90 transition"
+              >
                 Book This Service
-            </Link>
-            )}
+              </Link>
+            </div>
+          )}
 
             {service.images?.length > 0 && (
             <FadeIn>
-              <div className="mt-16">
-                <h2 className="text-3xl font-light mb-8">
-                Gallery
+              <div className="mt-16 mx-auto w-full max-w-[1600px] px-6 lg:px-10">
+                <h2 className="mb-10 text-center text-3xl font-light">
+                  Gallery
                 </h2>
 
-                <div className="columns-1 md:columns-2 gap-6 space-y-6">
-                {service.images.map((image: string, index: number) => (
-                    <img
-                    key={index}
-                    src={image}
-                    alt={`${service.title} ${index + 1}`}
-                  className="w-full rounded-3xl object-cover break-inside-avoid mb-6 transition-transform duration-500 hover:scale-[1.03]"                    />
-                ))}
-                </div>
+                <LuxuryEditorialGallery
+                  images={(service.images as string[]) ?? []}
+                  title={service.title}
+                /> 
+
               </div>
             </FadeIn>
             )}
