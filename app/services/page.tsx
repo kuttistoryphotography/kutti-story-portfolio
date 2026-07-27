@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 
 import ServicesShowcase from "@/components/services/ServicesShowcase";
 import ServicesCardGrid from "@/components/services/ServicesCardGrid";
+import ServiceDescription from "@/components/ServiceDescription";
 
 export default function ServicesPage() {
 
@@ -113,10 +114,16 @@ export default function ServicesPage() {
                 )}
               </h1>
 
-             <p className="mx-auto mt-4 md:mt-8 max-w-3xl px-2 text-base sm:text-lg md:text-xl leading-7 sm:leading-8 md:leading-9 text-white/80 font-light">
-                {hero.paragraph ||
-                    "Every story deserves to be told beautifully. We're preparing a collection of thoughtfully crafted photography experiences designed to preserve your most meaningful moments."}
-             </p>
+             <div className="mx-auto mt-4 md:mt-8 max-w-3xl px-2">
+                <ServiceDescription
+                  description={
+                    hero.paragraph ||
+                    "Every story deserves to be told beautifully. We're preparing a collection of thoughtfully crafted photography experiences designed to preserve your most meaningful moments."
+                  }
+                  clampLines={5}
+                  showReadMore
+                />
+              </div>
               
             </div>
         </div>

@@ -12,7 +12,7 @@ export default function LuxuryEditorialGallery({
   title,
 }: Props) {
   return (
-    <div className="mx-auto max-w-7xl px-4 md:px-6 ">
+    <div className="mx-auto max-w-7xl px-3 md:px-6 ">
 
       {Array.from({
         length: Math.ceil(images.length / 5),
@@ -23,11 +23,11 @@ export default function LuxuryEditorialGallery({
 
         return (
 
-            <div key={block} className="grid gap-8">
+            <div key={block} className="grid gap-3 md:gap-8">
 
             {/* Row 1 */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-3 md:gap-8">
 
               {images
                 .slice(start, start + 2)
@@ -35,7 +35,7 @@ export default function LuxuryEditorialGallery({
 
                   <div
                     key={start + index}
-                    className="relative h-[600px] md:h-[760px] overflow-hidden rounded-xl"
+                    className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-lg md:rounded-xl"
                   >
 
                     <CloudinaryImage
@@ -57,7 +57,7 @@ export default function LuxuryEditorialGallery({
             {images[start + 2] && (
 
               <div className="w-full">
-                <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+                <div className="relative aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-lg md:rounded-xl">
                     <CloudinaryImage
                     src={images[start + 2]}
                     alt={`${title} ${start + 3}`}
@@ -74,7 +74,7 @@ export default function LuxuryEditorialGallery({
 
             {bottomImages.length === 1 ? (
             <div className="flex justify-center">
-                <div className="relative w-full md:w-[48%] h-[600px] md:h-[760px] overflow-hidden rounded-xl">
+                <div className="relative w-full md:w-[48%] h-[260px] sm:h-[340px] md:h-[760px] overflow-hidden rounded-lg md:rounded-xl">
                 <CloudinaryImage
                     src={bottomImages[0]}
                     alt={`${title} ${start + 4}`}
@@ -85,11 +85,11 @@ export default function LuxuryEditorialGallery({
                 </div>
             </div>
             ) : bottomImages.length === 2 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-3 md:gap-8">
                 {bottomImages.map((image, index) => (
                 <div
                     key={start + index + 3}
-                    className="relative h-[600px] md:h-[760px] overflow-hidden rounded-xl"
+                    className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-lg md:rounded-xl"
                 >
                     <CloudinaryImage
                     src={image}
@@ -102,7 +102,7 @@ export default function LuxuryEditorialGallery({
                 ))}
             </div>
             ) : null}
-            <div className="h-1 bg-white-500"></div>
+            <div className="h-3 md:h-8"></div>
           </div>
 
         );
