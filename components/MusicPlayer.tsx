@@ -17,24 +17,28 @@ export default function MusicPlayer({
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
 
-  const toggle = () => {
+  const toggle = async () => {
     if (!audioRef.current) return;
 
-    if (playing) {
-      audioRef.current.pause();
+    if (audioRef.current.paused) {
+      try {
+        await audioRef.current.play();
+        setPlaying(true);
+      } catch (err) {
+        console.error(err);
+      }
     } else {
-      audioRef.current.play();
+      audioRef.current.pause();
+      setPlaying(false);
     }
-
-    setPlaying(!playing);
   };
 
   return (
-    <div className="flex items-center w-full max-w-[1080px] h-22 overflow-hidden rounded-sm border border-[#DDD4C6] bg-[#F5EFE6] shadow-sm">
-      
+    <div className="flex items-center w-full max-w-[1080px] overflow-hidden rounded-sm border border-[#DDD4C6] bg-[#F5EFE6] shadow-sm">
+
       <button
         onClick={toggle}
-        className="flex h-full w-24 items-center justify-center border-r border-[#DDD4C6] transition hover:bg-[#ECE3D5]"
+        className="flex h-24 w-24 items-center justify-center border-r border-[#DDD4C6] transition hover:bg-[#ECE3D5]"
       >
         {playing ? (
           <Pause size={28} />
@@ -43,12 +47,12 @@ export default function MusicPlayer({
         )}
       </button>
 
-      <div className="flex flex-col justify-center px-6">
-        <h4 className="text-3xl font-medium text-[#222]">
+      <div className="px-6">
+        <h4 className="text-2xl font-medium text-[#222]">
           {title}
         </h4>
 
-        <p className="mt-1 text-lg text-[#6B7280]">
+        <p className="mt-1 text-base text-[#6B7280]">
           {artist}
         </p>
       </div>
@@ -56,7 +60,26 @@ export default function MusicPlayer({
       <audio
         ref={audioRef}
         src={src}
-        onEnded={() => setPlaying(false)}
+        controls
+        preload="metadata"
+        className="w-full"
+        onPlay={() => {
+          console.log("PLAY");
+          setPlaying(true);
+        }}
+        onPause={() => {
+          console.log("PAUSE");
+          setPlaying(false);
+        }}
+        onLoadedMetadata={() => {
+          console.log("Loaded");
+        }}
+        onCanPlay={() => {
+          console.log("Can Play");
+        }}
+        onError={(e) => {
+          console.log("Audio Error", e.currentTarget.error);
+        }}
       />
     </div>
   );

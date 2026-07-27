@@ -34,10 +34,12 @@ export async function POST(request: Request) {
 
     console.time("Cloudinary Upload");
 
+    const isAudio = file.type.startsWith("audio/");
+
     const result = await cloudinary.uploader.upload(tempFile, {
       folder: "kutti-story",
-      resource_type: "image",
-      timeout: 600000, // 10 minutes
+      resource_type: isAudio ? "video" : "image",
+      timeout: 600000,
     });
 
     console.log(result);

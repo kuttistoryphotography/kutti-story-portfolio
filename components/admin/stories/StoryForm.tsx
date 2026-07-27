@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import GalleryUpload from "../gallery/GalleryUpload";
 import { CATEGORIES } from "@/lib/categories";
+import MusicUpload from "./MusicUpload";
+
 
 interface Story {
   _id?: string;
@@ -331,17 +333,21 @@ export default function StoryForm({
               />
             </div>
 
-            <div>
+            <div className="space-y-3">
               <label className="mb-2 block text-sm text-zinc-400">
-                MP3 URL
+                Upload Music
               </label>
 
-              <input
-                value={musicUrl}
-                onChange={(e) => setMusicUrl(e.target.value)}
-                className="w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-3"
-                placeholder="https://..."
+              <MusicUpload
+                onUpload={(url) => setMusicUrl(url)}
               />
+
+              {musicUrl && (
+                <audio controls className="w-full mt-3">
+                  <source src={musicUrl} type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+              )}
             </div>
 
           </div>
