@@ -19,6 +19,10 @@ interface Story {
   date: string;
   description: string;
   featured: boolean;
+
+  musicTitle?: string;
+  musicArtist?: string;
+  musicUrl?: string;
 }
 
 interface Props {

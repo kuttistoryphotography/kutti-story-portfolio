@@ -30,6 +30,7 @@ export async function POST(request: Request) {
     await connectDB();
 
     const body = await request.json();
+    console.log("BODY:", body);
 
     const story = await Story.create({
       title: body.title,
@@ -42,6 +43,11 @@ export async function POST(request: Request) {
 
       coverImage: body.coverImage,
       category: body.category,
+
+      musicTitle: body.musicTitle,
+      musicArtist: body.musicArtist,
+      musicUrl: body.musicUrl,
+
       location: body.location,
       date: body.date,
       description: body.description,

@@ -46,6 +46,22 @@ const StorySchema = new Schema(
       default: "Wedding",
     },
 
+    musicTitle: {
+      type: String,
+      default: "",
+    },
+
+    musicArtist: {
+      type: String,
+      default: "",
+    },
+
+    musicUrl: {
+      type: String,
+      default: "",
+    },
+
+
     location: String,
 
     date: String,
@@ -61,6 +77,9 @@ const StorySchema = new Schema(
     timestamps: true,
   }
 );
+
+console.log("Story Schema Paths:");
+console.log(Object.keys(StorySchema.paths));
 
 export default mongoose.models.Story ||
   mongoose.model("Story", StorySchema);

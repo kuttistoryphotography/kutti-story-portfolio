@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import Story from "@/models/Story";
+import mongoose from "mongoose";
 
 export async function PUT(
   request: NextRequest,
@@ -9,8 +10,13 @@ export async function PUT(
   try {
     await connectDB();
 
+    console.log("Database Name:", mongoose.connection.db?.databaseName);
+    console.log("Collection Name:", Story.collection.name);
+    console.log("Mongo URI:", process.env.MONGODB_URI);
+
     const { id } = await params;
     const body = await request.json();
+    console.log("BODY:", body);
 
     const story = await Story.findByIdAndUpdate(
       id,
@@ -25,6 +31,11 @@ export async function PUT(
 
         coverImage: body.coverImage,
         category: body.category,
+
+        musicTitle: body.musicTitle,
+        musicArtist: body.musicArtist,
+        musicUrl: body.musicUrl,
+
         location: body.location,
         date: body.date,
         description: body.description,
@@ -32,6 +43,8 @@ export async function PUT(
       },
       { new: true, runValidators: true }
     );
+
+    console.log("UPDATED STORY:", story);
 
     if (!story) {
       return NextResponse.json(

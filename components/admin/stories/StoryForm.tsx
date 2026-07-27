@@ -28,6 +28,29 @@ interface Props {
   onSaved?: () => void;
 }
 
+interface Story {
+  _id?: string;
+
+  title: string;
+  slug: string;
+
+  seoTitle?: string;
+  metaDescription?: string;
+  canonicalUrl?: string;
+
+  coverImage: string;
+
+  category: string;
+  location: string;
+  date: string;
+  description: string;
+  featured: boolean;
+
+  musicTitle?: string;
+  musicArtist?: string;
+  musicUrl?: string;
+}
+
 export default function StoryForm({
   onClose,
   editingStory,
@@ -48,6 +71,9 @@ export default function StoryForm({
     const [featured, setFeatured] = useState(false);
     const [saving, setSaving] = useState(false);
     const [date, setDate] = useState("");
+    const [musicTitle, setMusicTitle] = useState("");
+    const [musicArtist, setMusicArtist] = useState("");
+    const [musicUrl, setMusicUrl] = useState("");
         useEffect(() => {
         if (!editingStory) return;
 
@@ -62,6 +88,9 @@ export default function StoryForm({
         setDate(editingStory.date || "");
         setDescription(editingStory.description || "");
         setFeatured(editingStory.featured || false);
+        setMusicTitle(editingStory.musicTitle || "");
+        setMusicArtist(editingStory.musicArtist || "");
+        setMusicUrl(editingStory.musicUrl || "");
         }, [editingStory]);
     
     const generateSEO = () => {
@@ -173,6 +202,9 @@ export default function StoryForm({
             date,
             description,
             featured,
+            musicTitle,
+            musicArtist,
+            musicUrl,
         }),
      });
 
@@ -265,6 +297,53 @@ export default function StoryForm({
                 </option>
               ))}
             </select>
+          </div>
+
+          <div className="md:col-span-2 rounded-xl border border-zinc-700 p-5 space-y-5">
+
+            <h3 className="text-lg font-semibold text-white">
+              Music
+            </h3>
+
+            <div>
+              <label className="mb-2 block text-sm text-zinc-400">
+                Song Title
+              </label>
+
+              <input
+                value={musicTitle}
+                onChange={(e) => setMusicTitle(e.target.value)}
+                className="w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-3"
+                placeholder="Those Eyes"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm text-zinc-400">
+                Artist
+              </label>
+
+              <input
+                value={musicArtist}
+                onChange={(e) => setMusicArtist(e.target.value)}
+                className="w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-3"
+                placeholder="New West"
+              />
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm text-zinc-400">
+                MP3 URL
+              </label>
+
+              <input
+                value={musicUrl}
+                onChange={(e) => setMusicUrl(e.target.value)}
+                className="w-full rounded-lg bg-zinc-800 border border-zinc-700 px-4 py-3"
+                placeholder="https://..."
+              />
+            </div>
+
           </div>
 
           <div className="space-y-3">

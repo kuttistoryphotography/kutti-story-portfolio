@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import Gallery from "@/models/Gallery";
 import GalleryMasonry from "@/components/GalleryMasonry";
 import CommentSection from "@/components/CommentSection";
+import MusicPlayer from "@/components/MusicPlayer";
 
 interface Props {
   params: Promise<{
@@ -288,6 +289,26 @@ export default async function StoryPage({ params }: Props) {
 
               </aside>
 
+            </div>
+
+          </div>
+        </section>
+
+        {/* Music */}
+
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-8">
+
+            <h3 className="mb-6 text-center font-heading text-3xl text-[#3F5A4A]">
+              
+            </h3>
+
+            <div className="flex justify-center">
+              <MusicPlayer
+                title={story.musicTitle}
+                artist={story.musicArtist}
+                src={story.musicUrl}
+              />
             </div>
 
           </div>
