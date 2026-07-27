@@ -13,6 +13,8 @@ import LuxuryEditorialGallery from "@/components/LuxuryEditorialGallery";
 
 import type { Metadata } from "next";
 
+import ServiceDescription from "@/components/ServiceDescription";
+
 interface PageProps {
   params: Promise<{
     slug: string;
@@ -211,10 +213,10 @@ export default async function ServiceDetailsPage({
            </p>
             )}
 
-          <div className="mt-12 mx-auto w-full max-w-[1600px] px-6 lg:px-10">
-            <p className="text-lg leading-8 text-gray-600">
-              {service.description}
-            </p>
+          <div className="mx-auto w-full max-w-[1600px] px-6 lg:px-10">
+            <ServiceDescription
+              description={service.description}
+            />
           </div>
 
           {whatsapp && (

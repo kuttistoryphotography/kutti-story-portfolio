@@ -9,6 +9,7 @@ import Gallery from "@/models/Gallery";
 import GalleryMasonry from "@/components/GalleryMasonry";
 import CommentSection from "@/components/CommentSection";
 import MusicPlayer from "@/components/MusicPlayer";
+import ServiceDescription from "@/components/ServiceDescription";
 
 interface Props {
   params: Promise<{
@@ -225,9 +226,9 @@ export default async function StoryPage({ params }: Props) {
 
               {/* Story */}
               <div>
-                <p className="text-[19px] leading-[2.2] text-[#4B5563] whitespace-pre-line">
-                  {story.description}
-                </p>
+                <ServiceDescription
+                  description={story.description}
+                />
               </div>
 
               {/* Details */}
