@@ -75,19 +75,15 @@ export default function CategoryPills({
         </div>
       </div>
 
-      {/* Desktop */}
+        {/* Desktop */}
         <div
           className="
-            flex
-            flex-nowrap
+            hidden
+            md:flex
+            flex-wrap
             items-center
+            justify-center
             gap-3
-            overflow-x-auto
-            whitespace-nowrap
-            px-4
-            pb-2
-            scrollbar-hide
-            scroll-smooth
           "
         >
           {categories.map((category) => {

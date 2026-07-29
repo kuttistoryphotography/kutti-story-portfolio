@@ -42,7 +42,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </p>
 
-          <h2 className="mt-2 text-5xl md:text-xl font-light text-[#3D3D3D]">
+          <h2 className="font-heading mt-2 text-[42px] md:text-[56px] font-light leading-tight tracking-[-0.03em] text-[#2F2F2F]">
             Everything You Need to Know
           </h2>
 
@@ -63,28 +63,37 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-300"
+                className="group overflow-hidden rounded-[32px] border border-[#E8E2D6] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
               >
 
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="flex w-full items-center justify-between px-8 py-6 text-left"
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
+                  id={`faq-question-${index}`}
+                  className="flex w-full items-center justify-between px-8 py-8 text-left"
                 >
 
-                  <h3 className="text-xl font-medium text-[#3D3D3D]">
+                  <h3
+                    className="font-heading text-[26px] md:text-[34px] lg:text-[38px] font-light leading-[1.25] tracking-[-0.03em] text-[#2F2F2F] transition-colors duration-300 group-hover:text-[#7A8450]"
+                  >
                     {faq.question}
                   </h3>
 
                   <ChevronDown
-                    className={`transition-transform duration-300 ${
+                    size={22}
+                    strokeWidth={1.5}
+                    className={`text-[#7A8450] transition-transform duration-500 ${
                       isOpen ? "rotate-180" : ""
                     }`}
-                    size={24}
                   />
 
                 </button>
 
                 <div
+                  id={`faq-answer-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${index}`}
                   className={`grid transition-all duration-500 ${
                     isOpen
                       ? "grid-rows-[1fr]"
@@ -93,7 +102,7 @@ export default function FAQ() {
                 >
                   <div className="overflow-hidden">
 
-                    <p className="px-4 pb-8 leading-8 text-gray-600">
+                    <p className="px-8 pb-8 text-[17px] leading-8 font-body text-[#666666]">
                       {faq.answer}
                     </p>
 

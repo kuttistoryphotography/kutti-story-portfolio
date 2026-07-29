@@ -270,3 +270,15 @@ section {
 .c { grid-area: c; }
 .d { grid-area: d; }
 .e { grid-area: e; }
+
+/* ===========================
+   Fonts
+=========================== */
+
+.font-heading {
+  font-family: var(--font-heading), serif;
+}
+
+.font-body {
+  font-family: var(--font-body), sans-serif;
+}
