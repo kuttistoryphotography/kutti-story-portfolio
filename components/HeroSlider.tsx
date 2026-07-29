@@ -24,7 +24,7 @@ export default function HeroSlider() {
   });
 
   const [heroImages, setHeroImages] = useState<string[]>([]);
-  const { homepage, loading } = useHomepage();
+  const { homepage } = useHomepage();
 
   useEffect(() => {
     if (!homepage?.hero) return;
@@ -47,7 +47,9 @@ export default function HeroSlider() {
         .map((item: { image: string }) => item.image)
         .filter((image: string) => image && image.trim() !== "");
 
-      setHeroImages(images);
+      setHeroImages((prev) =>
+        JSON.stringify(prev) === JSON.stringify(images) ? prev : images
+      );
     } else if (heroData.backgroundImage) {
       setHeroImages([heroData.backgroundImage]);
     }
@@ -104,7 +106,7 @@ export default function HeroSlider() {
                      (max-width:1024px) 95vw,
                      75vw"
               unoptimized
-              className={`absolute inset-0 object-cover transition-all duration-[2500ms] ${
+              className={`absolute inset-0 object-cover transition-all duration-[2500ms] motion-reduce:transition-none ${
                 current === index
                   ? "opacity-100 scale-110"
                   : "opacity-0 scale-100"
