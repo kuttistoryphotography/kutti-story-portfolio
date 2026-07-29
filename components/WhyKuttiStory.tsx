@@ -9,13 +9,24 @@ export default function WhyKuttiStory() {
         <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-12 items-start">
 
           <h2 className="text-5xl font-light tracking-wide text-[#2F5DB2]">
-            WHY KUTTI STORY?
+             Why Choose Kutti Story Photography?
           </h2>
 
           <p className="text-lg leading-9 text-[#4B4B4B]">
-            Every wedding is unique, and so is every story we tell.
-            We believe in capturing genuine emotions, timeless moments,
-            and beautiful memories that you'll cherish forever.
+            At <strong>Kutti Story Photography</strong>, we specialize in
+            <strong> wedding photography in Madurai</strong>, capturing authentic
+            emotions and timeless moments with a creative, cinematic approach.
+            From traditional Tamil weddings and candid wedding photography to
+            engagement sessions, pre-wedding shoots, maternity photography,
+            baby photography, and wedding films, we create images that tell
+            your story beautifully.
+
+            <br /><br />
+
+            Based in Madurai, we proudly serve couples and families across
+            Tamil Nadu, including Chennai, Coimbatore, Trichy, Dindigul,
+            Theni, Sivakasi, Virudhunagar, Tirunelveli, and destination
+            weddings throughout South India.
           </p>
 
         </div>
@@ -76,6 +87,7 @@ export default function WhyKuttiStory() {
         </div>
 
       </div>
+      
     </section>
   );
 }

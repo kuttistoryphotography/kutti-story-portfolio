@@ -11,7 +11,7 @@ export default function FeaturedFilms() {
     heading: "Featured Films",
     description:
       "Some moments deserve more than photographs. Experience our wedding films crafted with emotion, elegance and timeless storytelling.",
-    buttonText: "View All Films",
+    buttonText: "Explore Wedding Films",
     buttonLink: "/films",
 
     cards: [
@@ -48,7 +48,6 @@ export default function FeaturedFilms() {
     fetch("/api/homepage")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Featured Films Data:", data.settings?.featuredFilms);
 
         if (data.settings?.featuredFilms) {
           setSettings(data.settings.featuredFilms);
@@ -82,9 +81,6 @@ export default function FeaturedFilms() {
       document.body.style.overflow = "";
     };
   }, [selectedVideo]);
-
-
-  console.log("Cards:", settings.cards);
 
   const getEmbedUrl = (url: string) => {
     if (!url) return "";
@@ -130,8 +126,16 @@ export default function FeaturedFilms() {
           {settings.cards.map((film, index) => (
 
             <div
-              key={index}
+              role="button"
+              key={`${film.title}-${index}`}
+              tabIndex={0}
+              aria-label={`Play ${film.title}`}
               onClick={() => setSelectedVideo(film.videoUrl)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setSelectedVideo(film.videoUrl);
+                }
+              }}
               className="group cursor-pointer overflow-hidden rounded-2xl md:rounded-3xl bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             >
 
@@ -140,8 +144,9 @@ export default function FeaturedFilms() {
 
                 {film.thumbnail ? (
                   <Image
+                    loading="lazy"
                     src={film.thumbnail}
-                    alt={film.title}
+                    alt={`${film.title} - ${film.category} | Kutti Story Photography`}
                     fill
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
@@ -243,9 +248,11 @@ export default function FeaturedFilms() {
             <div className="aspect-video overflow-hidden rounded-3xl bg-black">
               <iframe
                 src={getEmbedUrl(selectedVideo)}
-                title="Featured Film"
+                title="Featured Wedding Film"
+                loading="lazy"
                 allow="autoplay; encrypted-media; picture-in-picture"
                 allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
                 className="h-full w-full"
               />
             </div>

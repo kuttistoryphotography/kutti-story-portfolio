@@ -74,7 +74,7 @@ export default function HeroSlider() {
     );
   }
 
-  console.log("Hero Images:", heroImages);
+  
  
   return (
     <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
@@ -87,11 +87,15 @@ export default function HeroSlider() {
             <Image
               key={`${index}-${image}`}
               src={image}
-              alt={`Hero ${index + 1}`}
+              alt={
+                hero.heading
+                  ? `${hero.heading} - Kutti Story Photography`
+                  : "Best Wedding Photography in Madurai"
+              }
               fill
               priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
-              sizes="100vw"
+              sizes="(max-width:768px) 100vw, 90vw"
               unoptimized
               className={`absolute inset-0 object-cover transition-all duration-[2500ms] ${
                 current === index
@@ -109,7 +113,7 @@ export default function HeroSlider() {
             <div className="text-center text-white px-6">
 
               <h1 className="font-heading text-6xl md:text-8xl font-light tracking-[8px] text-white">
-                {hero.heading || "KUTTI STORY"}
+                {hero.heading || "Best Wedding Photography in Madurai"}
               </h1>
 
               <div className="mx-auto mt-8 h-px w-24 bg-[#C6A96B]" />

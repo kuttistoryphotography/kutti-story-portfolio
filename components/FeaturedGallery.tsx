@@ -88,7 +88,7 @@ const visibleCards = cards
                 <div className="relative aspect-square overflow-hidden rounded-2xl">
                   <CloudinaryImage
                     src={card.image}
-                    alt={card.title}
+                    alt={`${card.title} | Kutti Story Photography - Wedding Photography in Madurai`}
                     fill
                     optimizationWidth={500}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"

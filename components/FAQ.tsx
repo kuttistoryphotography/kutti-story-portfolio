@@ -4,6 +4,19 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/lib/faq";
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -12,6 +25,13 @@ export default function FAQ() {
   };
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
     <section className="bg-white pt-15 pb-15">
       <div className="mx-auto max-w-4xl px-3">
 
@@ -88,5 +108,6 @@ export default function FAQ() {
 
       </div>
     </section>
-  );
+  </>
+);
 }
