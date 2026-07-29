@@ -1,25 +1,32 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import PageLoader from "@/components/PageLoader";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const heading = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-heading",
+  display: "swap",
+  preload: true,
+  weight: ["400", "500", "600", "700"],
 });
 
 const body = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
+  preload: true,
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kuttistoryphotography.in"),
 
   title: {
-    default: "Kutti Story Photography",
+    default: "Best Wedding Photography in Madurai | Kutti Story Photography",
     template: "%s | Kutti Story Photography",
   },
 
@@ -98,14 +105,21 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${heading.variable} ${body.variable}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${heading.variable} ${body.variable} antialiased bg-white text-neutral-900`}
+      >
         <PageLoader>{children}</PageLoader>
         <FloatingWhatsApp />
       </body>

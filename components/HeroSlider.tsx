@@ -66,20 +66,24 @@ export default function HeroSlider() {
 
   if (heroImages.length === 0) {
     return (
-      <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
+      <section
+        aria-label="Hero Banner"
+        className="min-h-screen bg-[#f5f2ec] flex items-center py-10"
+      >
         <Container className="max-w-[95vw] 2xl:max-w-[3200px]">
           <div className="relative h-[92vh] w-full overflow-hidden rounded-[40px] bg-gray-200 animate-pulse" />
         </Container>
       </section>
     );
   }
-
-  
  
   return (
-    <section className="min-h-screen bg-[#f5f2ec] flex items-center py-10">
+    <section
+      aria-label="Hero Banner"
+      className="min-h-screen bg-[#f5f2ec] flex items-center py-10"
+    >
       <Container className="max-w-[75vw] 2xl:max-w-[3200px]">
-        <div className="h-12 bg-white-500"></div>
+        <div className="h-12" />
         <div className="relative mx-auto h-[90vh] w-[98%] overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
           {/* Hero Images */}
@@ -89,13 +93,16 @@ export default function HeroSlider() {
               src={image}
               alt={
                 hero.heading
-                  ? `${hero.heading} - Kutti Story Photography`
-                  : "Best Wedding Photography in Madurai"
+                  ? `${hero.heading} | Wedding Photography in Madurai by Kutti Story Photography`
+                  : "Luxury Wedding Photography in Madurai by Kutti Story Photography"
               }
               fill
               priority={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
-              sizes="(max-width:768px) 100vw, 90vw"
+              decoding={index === 0 ? "sync" : "async"}
+              sizes="(max-width:640px) 100vw,
+                     (max-width:1024px) 95vw,
+                     75vw"
               unoptimized
               className={`absolute inset-0 object-cover transition-all duration-[2500ms] ${
                 current === index
@@ -112,7 +119,9 @@ export default function HeroSlider() {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white px-6">
 
-              <h1 className="font-heading text-6xl md:text-8xl font-light tracking-[8px] text-white">
+              <h1
+                className="font-heading text-5xl md:text-7xl xl:text-8xl font-light tracking-[6px] md:tracking-[8px] text-white"
+              >
                 {hero.heading || "Best Wedding Photography in Madurai"}
               </h1>
 
@@ -127,6 +136,7 @@ export default function HeroSlider() {
               </p>
 
               <Link
+                aria-label="View Wedding Photography Portfolio"
                 href={hero.primaryButtonLink || "/portfolio"}
                 className="inline-block mt-12 rounded-full bg-[#7F977B] px-10 py-4 text-sm uppercase tracking-[5px] text-white shadow-lg transition-all duration-500 hover:bg-[#6C8568] hover:shadow-2xl hover:scale-105"
               >

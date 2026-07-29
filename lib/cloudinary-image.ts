@@ -8,6 +8,6 @@ export function optimizeCloudinaryImage(
 
   return url.replace(
     "/upload/",
-    `/upload/f_auto,q_auto,w_${width}/`
+    `/upload/f_auto,q_auto,dpr_auto,c_limit,w_${width}/`
   );
 }
