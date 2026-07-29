@@ -16,8 +16,86 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Kutti Story Photography",
-  description: "Luxury Photography Portfolio",
+  metadataBase: new URL("https://kuttistoryphotography.in"),
+
+  title: {
+    default: "Kutti Story Photography",
+    template: "%s | Kutti Story Photography",
+  },
+
+  description:
+    "Best Wedding Photography in Madurai. Candid Wedding Photography, Pre Wedding, Engagement, Maternity, Baby Shoot, Event Photography & Videography across Tamil Nadu.",
+
+  keywords: [
+    "Best Wedding Photography in Madurai",
+    "Wedding Photographer Madurai",
+    "Candid Wedding Photography",
+    "Wedding Videography",
+    "Pre Wedding Photography",
+    "Engagement Photography",
+    "Maternity Photography",
+    "Baby Shoot",
+    "Event Photography",
+    "Tamil Nadu Wedding Photographer",
+    "Kutti Story Photography",
+  ],
+
+  authors: [
+    {
+      name: "Kutti Story Photography",
+      url: "https://kuttistoryphotography.in",
+    },
+  ],
+
+  creator: "Kutti Story Photography",
+  publisher: "Kutti Story Photography",
+
+  alternates: {
+    canonical: "https://kuttistoryphotography.in",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://kuttistoryphotography.in",
+    siteName: "Kutti Story Photography",
+    title: "Kutti Story Photography",
+    description:
+      "Luxury Wedding Photography & Cinematic Videography in Madurai and across Tamil Nadu.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kutti Story Photography",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Kutti Story Photography",
+    description:
+      "Luxury Wedding Photography in Madurai and Tamil Nadu.",
+    images: ["/og-image.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

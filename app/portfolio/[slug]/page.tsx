@@ -26,21 +26,28 @@ export async function generateMetadata({
 
   const story: any = await Story.findOne({ slug }).lean();
 
+  if (!story) {
+    return {
+      title: "Portfolio Not Found | Kutti Story Photography",
+    };
+  }
+
   const canonical =
     story.canonicalUrl?.startsWith("http")
       ? story.canonicalUrl
-      : `https://www.kuttistoryphotography.com${
+      : `https://kuttistoryphotography.in${
           story.canonicalUrl || `/portfolio/${story.slug}`
         }`;
 
   return {
-    metadataBase: new URL("https://www.kuttistoryphotography.com"),
+    metadataBase: new URL("https://kuttistoryphotography.in"),
 
-    title:
-      story.seoTitle ||
-      `${story.title} | Kutti Story Photography`,
+    title: story.seoTitle || story.title,
 
-    description: story.metaDescription,
+    description:
+      story.metaDescription ||
+      story.description ||
+      "Luxury Wedding Photography by Kutti Story Photography.",
 
     keywords: story.keywords || [],
 
@@ -49,16 +56,18 @@ export async function generateMetadata({
     },
 
     openGraph: {
-      title:
-        story.seoTitle ||
-        `${story.title} | Kutti Story Photography`,
-
-      description: story.metaDescription,
+      title: story.seoTitle || story.title,
+      description:
+        story.metaDescription ||
+        story.description ||
+        "",
 
       url: canonical,
 
-      type: "website",
       siteName: "Kutti Story Photography",
+
+      type: "website",
+
       locale: "en_IN",
 
       images: [
@@ -73,10 +82,11 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary_large_image",
-      title:
-        story.seoTitle ||
-        `${story.title} | Kutti Story Photography`,
-      description: story.metaDescription,
+      title: story.seoTitle || story.title,
+      description:
+        story.metaDescription ||
+        story.description ||
+        "",
       images: [story.coverImage],
     },
 
@@ -112,17 +122,22 @@ export default async function StoryPage({ params }: Props) {
       .lean();
 
   const schema = {
-    "@context": "https://schema.org",
-    "@type": "Photograph",
-    name: story.title,
-    description: story.metaDescription,
-    image: story.coverImage,
-    creator: {
-      "@type": "Organization",
-      name: "Kutti Story Photography",
-    },
-    url: `https://www.kuttistoryphotography.com/portfolio/${story.slug}`,
-  };
+  "@context": "https://schema.org",
+  "@type": "Photograph",
+
+  name: story.title,
+  description: story.metaDescription,
+  image: story.coverImage,
+
+  url: `https://kuttistoryphotography.in/portfolio/${story.slug}`,
+
+  creator: {
+    "@type": "Organization",
+    name: "Kutti Story Photography",
+    url: "https://kuttistoryphotography.in",
+    logo: "https://kuttistoryphotography.in/logo.png",
+  },
+};
 
   return (
     <>
