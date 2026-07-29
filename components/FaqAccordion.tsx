@@ -19,6 +19,7 @@ export default function FaqAccordion({ faqs }: Props) {
   const [openId, setOpenId] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  console.log("Selected Category:", selectedCategory);
 
   return (
     <>
