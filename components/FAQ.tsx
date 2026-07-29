@@ -17,12 +17,12 @@ export default function FAQ() {
 
         {/* Heading */}
         <div className="text-center">
-
+          <div className="h-6 bg-white-500"></div>
           <p className="uppercase tracking-[4px] text-[#7A8450] text-sm">
             Frequently Asked Questions
           </p>
 
-          <h2 className="mt-5 text-5xl md:text-6xl font-light text-[#3D3D3D]">
+          <h2 className="mt-2 text-5xl md:text-xl font-light text-[#3D3D3D]">
             Everything You Need to Know
           </h2>
 
@@ -34,7 +34,7 @@ export default function FAQ() {
         </div>
 
         {/* FAQ Items */}
-        <div className="mt-6 space-y-3">
+        <div className="mt-3 space-y-3">
 
           {faqs.map((faq, index) => {
 

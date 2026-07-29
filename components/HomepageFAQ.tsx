@@ -8,6 +8,7 @@ export default function HomepageFAQ() {
       <div className="mx-auto max-w-5xl px-6">
         {/* Section Heading */}
         <div className="text-center">
+          
           <p className="uppercase tracking-[6px] text-sm text-[#B79A5F]">
             Frequently Asked Questions
           </p>
