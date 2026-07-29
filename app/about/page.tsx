@@ -47,17 +47,17 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="min-h-screen pt-28 bg-[#FAFAF8]">
-
+      <div className="h-15 bg-white-500"></div>
         {/* Hero */}
-        <div className="h-20 bg-white-500"></div>
+        <div className="h-15 bg-white-500"></div>
         <section className="py-20">
           <div className="mx-auto max-w-[1600px] px-6">
 
-            <p className="uppercase tracking-[10px] text-[#B79A5F] text-sm whitespace-pre-line">
+            <p className="uppercase tracking-[5px] text-[#B79A5F] text-sm whitespace-pre-line">
               {about.hero.subheading || "About Us"}
             </p>
 
-            <h1 className="mt-4 font-heading text-5xl lg:text-6xl text-[#3F5A4A] whitespace-pre-line">
+            <h1 className="mt-1 font-heading text-3xl lg:text-4xl text-[#3F5A4A] whitespace-pre-line">
               {about.hero.heading?.trim() ? (
                 about.hero.heading
               ) : (
