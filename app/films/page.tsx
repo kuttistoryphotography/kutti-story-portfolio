@@ -104,13 +104,6 @@ export default function FilmsPage() {
             {filmsData.hero.heading || "Wedding Films"}
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#666] whitespace-pre-line">
-            {filmsData.hero.paragraph ||
-              `Every wedding is a beautiful story. Our cinematic films preserve
-          every smile, every tear, every promise, and every unforgettable
-          moment exactly as it happened.`}
-          </p>
-
         </section>
 
         {/* Featured Film */}

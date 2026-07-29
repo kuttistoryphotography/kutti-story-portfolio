@@ -46,151 +46,125 @@ export default function AboutPage() {
     <>
       <Navbar />
 
-      <main className="pt-32 bg-[#FAFAF8]">
+      <main className="min-h-screen pt-28 bg-[#FAFAF8]">
 
         {/* Hero */}
-        <section className="py-20 text-center px-6">
+        <div className="h-20 bg-white-500"></div>
+        <section className="py-20">
+          <div className="mx-auto max-w-[1600px] px-6">
 
-          <p className="uppercase tracking-[8px] text-[#B79A5F] text-sm whitespace-pre-line">
-            {about.hero.subheading || "About Us"}
-          </p>
+            <p className="uppercase tracking-[10px] text-[#B79A5F] text-sm whitespace-pre-line">
+              {about.hero.subheading || "About Us"}
+            </p>
 
-          <h1 className="mt-4 font-heading text-6xl text-[#3F5A4A] whitespace-pre-line">
-            {about.hero.heading || (
-              <>
-                Every Love Story Deserves
-                <br />
-                To Be Remembered
-              </>
-            )}
-          </h1>
+            <h1 className="mt-4 font-heading text-5xl lg:text-6xl text-[#3F5A4A] whitespace-pre-line">
+              {about.hero.heading?.trim() ? (
+                about.hero.heading
+              ) : (
+                <>
+                  Every Love Story Deserves
+                  <br />
+                  To Be Remembered
+                </>
+              )}
+            </h1>
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-[#666] whitespace-pre-line">
-             {about.hero.paragraph ||
-              `We don't simply take photographs.
-          We preserve emotions, laughter, tears and timeless memories
-          that become part of your family's legacy.`}
-          </p>
+            <p className="mt-8 max-w-6xl text-lg leading-9 text-[#666] whitespace-pre-line">
+              {about.hero.paragraph ||
+                `We don't simply take photographs.
+                We preserve emotions, laughter, tears and timeless memories
+                that become part of your family's legacy.`}
+            </p>
 
+          </div>
         </section>
 
         {/* Studio Story */}
 
-        <section className="mx-auto max-w-[1900px] px-6 pt-28 pb-16">
+        <section className="mx-auto max-w-[1600px] px-6 py-20">
 
-           
+          {/* Collage */}
+          <div className="flex flex-col gap-6 lg:flex-row lg:h-[760px]">
 
-            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[620px]">
+            {/* Left Large */}
+            <div className="lg:w-15/12 overflow-hidden rounded-[40px]">
+              {about.hero.images[0] && (
+                <img
+                  src={about.hero.images[0]}
+                  alt=""
+                  className="w-full h-[350px] lg:h-full object-cover"
+                />
+              )}
+            </div>
 
-              {/* Large Image */}
-              <div className="col-span-2 row-span-2 overflow-hidden rounded-[30px]">
-                {about.hero.images[0] && (
-                  <img
-                    src={about.hero.images[0]}
-                    className="w-full h-full object-cover"
-                    alt=""
-                  />
-                )}
-              </div>
+            {/* Right Column */}
+            <div className="lg:w-5/12 flex flex-col gap-6">
 
               {/* Top Right */}
-              <div className="overflow-hidden rounded-[24px]">
+              <div className="flex-1 overflow-hidden rounded-[30px]">
                 {about.hero.images[1] && (
                   <img
                     src={about.hero.images[1]}
-                    className="w-full h-full object-cover"
                     alt=""
+                    className="w-full h-[350px] lg:h-full object-cover"
                   />
                 )}
               </div>
 
               {/* Bottom Right */}
-              <div className="overflow-hidden rounded-[24px]">
+              <div className="flex-1 overflow-hidden rounded-[30px]">
                 {about.hero.images[2] && (
                   <img
                     src={about.hero.images[2]}
-                    className="w-full h-full object-cover"
                     alt=""
+                    className="w-full h-[250px] lg:h-full object-cover"
                   />
                 )}
               </div>
 
             </div>
 
-            {/* Profile Card */}
+          </div>
 
-            <div className="mt-12 flex justify-center">
+          {/* Profile Card */}
+          <div className="rounded-[42px] bg-white p-10 shadow-1xl">
 
-              <div className="bg-white rounded-[30px] shadow-8xl p-8 w-[1040px] text-center">
+            <div className="rounded-[42px] bg-white p-8 text-center shadow-xl">
 
-                <div className="w-62 h-42 mx-auto square-full overflow-hidden border-4 border-[#FAFAF8] shadow-lg">
+              <div className="mx-auto h-44 w-44 overflow-hidden rounded-full border-4 border-[#FAFAF8]">
 
-                  {about.hero.profileImage && (
-                    <img
-                      src={about.hero.profileImage}
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-
-                </div>
-
-                <h3 className="mt-6 text-3xl font-semibold text-[#3F5A4A]">
-                  {about.hero.profileName || "Kutti Story"}
-                </h3>
-
-                <p className="mt-2 text-zinc-500 tracking-wide">
-                  {about.hero.profileRole || "Lead Photographer"}
-                </p>
+                <img
+                  src={about.hero.profileImage}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
 
               </div>
+
+              <h3 className="mt-6 text-3xl font-semibold text-[#3F5A4A]">
+                {about.hero.profileName || "Kutti Story"}
+              </h3>
 
             </div>
 
-            {/* Large Featured Image */}
-            {about.hero.images[3] && (
-              <div className="mt-20 mb-20">
-                <Container>
-                  <div className="w-full h-[500px] overflow-hidden rounded-[30px] shadow-3xl">
-                    <img
-                      src={about.hero.images[3]}
-                      alt="Featured"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </Container>
-              </div>
-            )}
+          </div>
 
-          
-          <div className="mt-40 max-w-4xl mx-auto text-center">
+          {/* Wide Image */}
+          <div className="mt-8 lg:mt-10 overflow-hidden rounded-[30px]">
 
-            <h2 className="font-heading text-5xl text-[#3F5A4A]">
-              {about.story.heading || "Our Story"}
-            </h2>
-
-            <p className="mt-8 text-lg leading-9 text-[#666] whitespace-pre-line">
-              {about.story.paragraph ||
-                `Kutti Story Photography was founded with one dream—
-            capturing genuine emotions in the most beautiful way.
-
-            Every wedding is unique. Every smile has meaning.
-            Every glance tells a story.
-            Our mission is to preserve these memories with elegance
-            and cinematic artistry.
-
-            Years later, when you look back at your photographs,
-            we want you to relive every feeling exactly as it happened.`}
-            </p>
+            <img
+              src={about.hero.images[3]}
+              alt=""
+              className="h-[300px] w-full object-cover md:h-[500px] lg:h-[700px]"
+            />
 
           </div>
-          
 
         </section>
 
         {/* Statistics */}
 
-        <section className="py-24">
+        <section className="pt-20 pb-24">
 
           <div className="mx-auto grid max-w-[1900px] gap-10 px-6 text-center md:grid-cols-4">
 
