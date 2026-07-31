@@ -60,7 +60,7 @@ export default function Navbar() {
           : "bg-[#849669]/95 backdrop-blur-xl border-b border-[#72835A] shadow-md"
       }`}
     >
-      <nav className="mx-auto flex max-w-[1800px] items-center justify-between px-4 py-4 sm:px-6 lg:px-16 lg:py-7">
+      <nav className="mx-auto h-20 lg:h-24 flex max-w-[1800px] items-center justify-between px-4 sm:px-6 lg:px-16">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image

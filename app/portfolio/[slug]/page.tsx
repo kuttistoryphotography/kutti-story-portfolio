@@ -221,7 +221,7 @@ export default async function StoryPage({ params }: Props) {
 
         {/* Story */}
         <section className="py-20">
-           <div className="mx-auto w-full max-w-[1680px] px-14 lg:px-20">
+           <div className="mx-auto w-full max-w-[1680px] px-4 md:px-8 lg:px-20">
 
             {/* Section Heading */}
             <div className="mb-16">
@@ -332,7 +332,7 @@ export default async function StoryPage({ params }: Props) {
 
         {/* Gallery */}
 
-        <section className="mx-auto max-w-7xl px-8 lg:px-12 xl:px-16 py-24">
+        <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 xl:px-16 py-24">
 
           <div className="mb-20 text-center">
 

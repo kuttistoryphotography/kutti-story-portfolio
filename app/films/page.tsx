@@ -91,23 +91,24 @@ export default function FilmsPage() {
     <>
       <Navbar />
 
-      <main className="pt-32 min-h-screen bg-[#FAFAF8]">
+      <main className="pt-28 lg:pt-32 min-h-screen bg-[#FAFAF8]">
 
         {/* Hero Section */}
-        <section className="py-20 px-6 text-center">
+        <section className="pt-4 pb-8 md:pt-6 md:pb-10 px-6">
+          <div className="mx-auto max-w-6xl text-center">
+            <p className="uppercase tracking-[8px] text-[#B79A5F] text-sm">
+              Kutti Story Photography
+            </p>
 
-          <p className="uppercase tracking-[8px] text-[#B79A5F] text-sm whitespace-pre-line">
-            {filmsData.hero.subheading || "Kutti Story Photography"}
-          </p>
-
-          <h1 className="mt-4 font-heading text-6xl text-[#3F5A4A] whitespace-pre-line">
-            {filmsData.hero.heading || "Wedding Films"}
-          </h1>
-
+            <h1 className="mt-5 font-heading text-4xl md:text-6xl leading-tight text-[#3F5A4A]">
+              Cinematic Wedding Films
+              <br className="md:hidden" />
+              <span className="md:ml-2">&amp; Love Stories</span>
+            </h1>
+          </div>
         </section>
-
+        
         {/* Featured Film */}
-
         <section className="mx-auto max-w-[1900px] px-5 md:px-8">
 
           <h2 className="mb-8 font-heading text-3xl md:text-5xl font-light text-[#2D2D2D]">

@@ -23,7 +23,7 @@ export default function GalleryMasonry({ photos }: Props) {
           return (
             <div
               key={blockIndex}
-              className="grid grid-cols-2 gap-3"
+              className="grid grid-cols-2 gap-2 md:gap-3 w-full"
             >
               {/* Image 1 */}
               {block[0] && (
@@ -40,7 +40,7 @@ export default function GalleryMasonry({ photos }: Props) {
                 <div className="col-span-2">
                   <ImageCard
                     photo={block[2]}
-                    className="aspect-[16/9]"
+                    className="aspect-[14/16]"
                   />
                 </div>
               )}
@@ -72,7 +72,7 @@ function ImageCard({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-sm  ${className}`}
+      className={`relative w-full overflow-hidden rounded-sm ${className}`}
     >
       <CloudinaryImage
         src={photo.image}

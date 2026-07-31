@@ -104,7 +104,7 @@ export default function FeaturedFilms() {
       <div className="mx-auto w-full max-w-[1700px] px-8 xl:px-12">
 
         {/* Section Heading */}
-        <div className="mb-16 text-center">
+        <div className="mb-15 text-center">
 
           <p className="uppercase tracking-[8px] text-[#7A8450] text-sm">
             {settings.smallTitle}
