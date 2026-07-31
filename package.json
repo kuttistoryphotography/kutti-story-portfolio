@@ -51,7 +51,7 @@
     "fs-extra": "^11.3.6",
     "input-otp": "^1.4.2",
     "jose": "^6.2.3",
-    "lucide-react": "^1.23.0",
+    "lucide-react": "^1.28.0",
     "mongodb": "^7.4.0",
     "mongoose": "^9.7.3",
     "next": "16.2.10",
