@@ -13,7 +13,7 @@ export default function HomepageFAQ() {
             Frequently Asked Questions
           </p>
 
-          <h2 className="mt-4 text-5xl md:text-6xl font-light text-[#3F5A4A]">
+          <h2 className="mt-3 text-3xl md:text-4xl font-light text-[#3F5A4A]">
             Everything You Need to Know
           </h2>
 
@@ -32,7 +32,7 @@ export default function HomepageFAQ() {
         />
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-10 text-center">
           <h3 className="text-3xl font-light text-[#3F5A4A]">
             Still Have Questions?
           </h3>

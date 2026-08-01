@@ -63,7 +63,7 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="group overflow-hidden rounded-[32px] border border-[#E8E2D6] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
+                className="group overflow-hidden rounded-[12px] border border-[#E8E2D6] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
               >
 
                 <button
