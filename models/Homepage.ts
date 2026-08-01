@@ -56,6 +56,13 @@ const HomepageSchema = new Schema(
         badgeText: { type: String, default: "" },
 
         primaryButtonText: { type: String, default: "" },
+
+        // ✅ ADD THIS
+        primaryButtonLink: {
+          type: String,
+          default: "/portfolio",
+        },
+
         secondaryButtonText: { type: String, default: "" },
 
         statsYears: { type: String, default: "" },

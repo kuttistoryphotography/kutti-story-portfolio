@@ -39,7 +39,10 @@ export default function HeroSlider() {
       primaryButtonText:
         heroData.primaryButtonText || "Explore Portfolio",
       primaryButtonLink:
-        heroData.primaryButtonLink || "#",
+      heroData.primaryButtonLink &&
+      heroData.primaryButtonLink !== "#"
+        ? heroData.primaryButtonLink
+        : "/portfolio",
     });
 
     if (heroData.heroSliderImages?.length > 0) {
