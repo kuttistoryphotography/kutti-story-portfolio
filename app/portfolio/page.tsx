@@ -80,7 +80,7 @@ export default function PortfolioPage() {
   return (
     <>
       <Navbar />
-      <div className="h-10 bg-white-500"></div>
+      <div className="h-15 bg-white-500"></div>
 
       <main className="min-h-screen bg-[#FAFAF8] pt-24 md:pt-32">
 
@@ -97,7 +97,7 @@ export default function PortfolioPage() {
             Deserves A Timeless Frame
           </h1>
 
-          <p className="mx-auto mt-2 max-w-2xl px-2 text-base sm:text-lg leading-relaxed text-[#6E6E6E]">
+          <p className="mx-auto mt-2 max-w-7xl px-2 text-base sm:text-lg leading-relaxed text-[#6E6E6E]">
             Explore our curated collection of weddings, bridal portraits and
             cinematic moments captured with emotions, elegance and timeless beauty.
           </p>
@@ -109,8 +109,6 @@ export default function PortfolioPage() {
 
           {/* Mobile */}
           <div className="relative md:hidden">
-
-            
             <div
               className="
                 flex
