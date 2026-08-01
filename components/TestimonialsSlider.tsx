@@ -41,7 +41,7 @@ export default function TestimonialsSlider() {
             Love Letters
           </p>
 
-          <h2 className="mt-5 text-5xl font-light text-[#2C2A28]">
+          <h2 className="mt-2 text-5xl font-light text-[#2C2A28]">
             What Our Couples Say
           </h2>
         </div>
