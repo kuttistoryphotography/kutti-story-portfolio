@@ -101,7 +101,7 @@ export default function FeaturedFilms() {
   return (
     <section className="bg-white py-20">
       
-      <div className="mx-auto w-full max-w-[1700px] px-8 xl:px-12">
+      <div className="mx-auto w-[92%] max-w-[1700px]">
 
         {/* Section Heading */}
         <div className="mb-15 text-center">
@@ -121,7 +121,7 @@ export default function FeaturedFilms() {
         </div>
 
         {/* Film Cards */}
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-8 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 px-3 md:px-0 md:grid-cols-2 md:gap-8 lg:grid-cols-3 2xl:grid-cols-4">
 
           {settings.cards.map((film, index) => (
 

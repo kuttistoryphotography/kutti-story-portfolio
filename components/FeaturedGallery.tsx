@@ -48,7 +48,7 @@ const visibleCards = cards
 
  return (
   <section className="bg-white py-24">
-    <div className="mx-auto max-w-[1900px] px-6">
+    <div className="mx-auto w-full max-w-[1900px] px-5 sm:px-6 md:px-8 lg:px-10">
 
       {/* Section Title */}
       <div className="mb-16 text-center">
@@ -75,7 +75,7 @@ const visibleCards = cards
 
       {/* ================= MOBILE ================= */}
 
-      <div className="grid grid-cols-2 gap-3 md:hidden">
+      <div className="grid grid-cols-2 gap-2 px-1 md:hidden">
         {visibleCards
           .map((card, index) => (
             <motion.div

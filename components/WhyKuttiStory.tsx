@@ -3,16 +3,16 @@
 export default function WhyKuttiStory() {
   return (
     <section className="bg-white py-24">
-      <div className="mx-auto max-w-[1900px] px-6">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
 
         {/* Top Heading */}
-        <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-4 items-start">
 
-          <h2 className="text-5xl font-light tracking-wide text-[#2F5DB2]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide text-[#2F5DB2] leading-tight">
              Why Choose Kutti Story Photography?
           </h2>
 
-          <p className="text-lg leading-9 text-[#4B4B4B]">
+          <p className="text-base sm:text-lg leading-8 sm:leading-9 text-[#4B4B4B]">
             At <strong>Kutti Story Photography</strong>, we specialize in
             <strong> wedding photography in Madurai</strong>, capturing authentic
             emotions and timeless moments with a creative, cinematic approach.
@@ -33,8 +33,8 @@ export default function WhyKuttiStory() {
 
         {/* Testimonial Card */}
 
-        <div className="mt-16 rounded-sm bg-[#F3EEE4] px-12 py-14 lg:px-16 lg:py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-12 items-center">
+        <div className="mt-16 rounded-sm bg-[#F3EEE4] px-6 py-8 sm:px-8 sm:py-10 lg:px-16 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-1 items-center">
 
          {/* Left */}
 
@@ -65,7 +65,7 @@ export default function WhyKuttiStory() {
 
             <div>
 
-              <p className="text-lg leading-9 text-[#4B4B4B]">
+              <p className="text-base sm:text-lg leading-8 sm:leading-9 text-[#4B4B4B]">
                 The real strength of Kutti Story is not just photography,
                 but the people behind the camera. From the very first
                 conversation until your final delivery, we work as a team
