@@ -33,7 +33,7 @@ export default async function FaqPage() {
       <main className="bg-[#FAFAF8] min-h-screen pt-24 md:pt-32 pb-24">
 
         {/* Hero */}
-          <section className="max-w-6xl mx-auto px-6 pt-8 md:pt-12 pb-8 md:pb-12 text-center">
+          <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-8 md:pt-12 pb-8 md:pb-12 text-center">
           <div className="h-10 bg-white-500"></div>
             <p className="uppercase tracking-[6px] text-sm text-[#B79A5F]">
               SUPPORT
@@ -53,7 +53,7 @@ export default async function FaqPage() {
           </section>
 
         {/* FAQ List */}
-          <section className="max-w-5xl mx-auto px-6 mt-12 md:mt-20">
+          <section className="max-w-5xl mx-auto px-4 sm:px-6 mt-10 md:mt-20">
 
           <FaqAccordion faqs={faqs} />
 

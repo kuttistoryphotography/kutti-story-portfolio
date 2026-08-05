@@ -92,47 +92,50 @@ export default function FaqAccordion({ faqs }: Props) {
           <div
             key={faq._id}
             className="
-                      overflow-hidden
-                      rounded-[26px]
-                      border
-                      border-[#E8E8E8]
-                      bg-white
-                      transition-all
-                      duration-300
-                      hover:shadow-xl
-                      "
+              overflow-hidden
+              rounded-[24px]
+              border
+              border-[#ECE8E1]
+              bg-white
+              shadow-sm
+              transition-all
+              duration-300
+              hover:shadow-md
+            "
           >
             <button
               onClick={() =>
                 setOpenId(isOpen ? null : faq._id)
               }
-              className="flex w-full items-center justify-between px-6 md:px-8 py-5 md:py-6 text-left"
+              className="flex w-full items-center justify-between gap-4 px-5 md:px-8 py-5 md:py-6 text-left"
             >
-              <h2 className="
-                  font-heading
-                  text-[20px]
-                  md:text-[28px]
-                  font-light
-                  leading-[1.35]
-                  tracking-[-0.02em]
-                  text-[#2F2F2F]
-                  pr-6
+              <h2
+                className="
+                    flex-1
+                    font-heading
+                    text-[15px]
+                    sm:text-[18px]
+                    md:text-[28px]
+                    lg:text-[34px]
+                    font-light
+                    leading-[1.5]
+                    tracking-normal
+                    text-[#2F2F2F]
+                    pr-3
               ">
                 {faq.question}
               </h2>
 
               <ChevronDown
-                size={18}
-                strokeWidth={1.5}
-                className={`flex-shrink-0 transition-transform duration-300 ${
+                className={`w-5 h-5 md:w-6 md:h-6 shrink-0 transition-transform duration-300 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
 
             {isOpen && (
-              <div className="border-t border-[#ECECEC] px-6 md:px-8 py-5 md:py-6">
-                <p className="text-[16px] leading-8 font-light text-[#666666]">
+              <div className="border-t border-[#ECECEC] px-5 md:px-8 py-5 md:py-6">
+                <p className="text-[15px] md:text-[17px] leading-7 text-gray-600">
                   {faq.answer}
                 </p>
               </div>
