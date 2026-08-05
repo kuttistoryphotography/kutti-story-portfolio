@@ -107,7 +107,7 @@ export default function FaqAccordion({ faqs }: Props) {
               onClick={() =>
                 setOpenId(isOpen ? null : faq._id)
               }
-              className="flex w-full items-center justify-between gap-4 px-5 md:px-8 py-5 md:py-6 text-left"
+              className="flex w-full items-center justify-between gap-3 px-4 md:px-8 py-5 md:py-6 text-left"
             >
               <h2
                 className="

@@ -102,20 +102,12 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`relative pb-2 transition-all duration-500 ease-out
+                    className={`transition-all duration-300
                     ${
                       active
-                        ? "text-[#F3D7A2]"
-                        : "text-white hover:text-[#F3D7A2]"
-                    }
-                    after:absolute
-                    after:left-0
-                    after:-bottom-1
-                    after:h-[2px]
-                    after:bg-[#B79A5F]
-                    after:transition-all
-                    after:duration-300
-                    ${active ? "after:w-full" : "after:w-0 hover:after:w-full"}`}
+                        ? "text-white font-semibold [text-shadow:0_0_10px_rgba(255,255,255,0.8)]"
+                        : "text-white/80 hover:text-white"
+                    }`}
                   >
                     {item.name}
                   </Link>
@@ -131,7 +123,7 @@ export default function Navbar() {
 
     {/* Mobile Menu */}
     {menuOpen && (
-      <div className="fixed inset-0 top-[88px] z-[60] bg-[#849669] lg:hidden flex items-center justify-center">
+      <div className="fixed inset-0 top-20 z-[60] bg-[#849669] lg:hidden flex items-center justify-center">
         <ul className="flex flex-col items-center gap-10">
           {navItems.map((item) => (
             <li key={item.name}>
