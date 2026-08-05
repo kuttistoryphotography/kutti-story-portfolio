@@ -87,9 +87,9 @@ export default function HeroSlider() {
       aria-label="Hero Banner"
       className="min-h-screen bg-[#f5f2ec] flex items-center py-10"
     >
-      <Container className="max-w-[65vw] 2xl:max-w-[3200px]">
+      <Container className="max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-18" />
-        <div className="relative mx-auto h-[90vh] w-[98%] overflow-hidden rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
+        <div className="relative mx-auto h-[90vh] w-full overflow-hidden rounded-3xl md:rounded-[40px] shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
 
           {/* Hero Images */}
           {heroImages.map((image: string, index: number) => (
@@ -122,17 +122,25 @@ export default function HeroSlider() {
 
           {/* Content */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white px-6">
+            <div className="text-center text-white px-4 sm:px-6">
 
               <h1
-                className="font-heading text-5xl md:text-7xl xl:text-8xl font-light tracking-[6px] md:tracking-[8px] text-white"
+                className="font-heading 
+                text-3xl
+                sm:text-4xl
+                md:text-6xl
+                xl:text-8xl 
+                font-light tracking-[2px]
+                sm:tracking-[4px]
+                md:tracking-[8px] 
+                text-white"
               >
                 {hero.heading || "Best Wedding Photography in Madurai"}
               </h1>
 
               <div className="mx-auto mt-8 h-px w-24 bg-[#C6A96B]" />
 
-              <p className="mt-8 text-sm md:text-base uppercase tracking-[8px] text-[#E8DDC7]">
+              <p className="mt-8 text-xs sm:text-sm md:text-base uppercase tracking-[2px] sm:tracking-[4px] md:tracking-[8px] text-[#E8DDC7]">
                 {hero.subheading}
               </p>
 
@@ -143,7 +151,8 @@ export default function HeroSlider() {
               <Link
                 aria-label="View Wedding Photography Portfolio"
                 href={hero.primaryButtonLink || "/portfolio"}
-                className="inline-block mt-12 rounded-full bg-[#7F977B] px-10 py-4 text-sm uppercase tracking-[5px] text-white shadow-lg transition-all duration-500 hover:bg-[#6C8568] hover:shadow-2xl hover:scale-105"
+                className="inline-block mt-12 rounded-full bg-[#7F977B] px-7 py-3
+                md:px-10 md:py-4 text-sm uppercase tracking-[5px] text-white shadow-lg transition-all duration-500 hover:bg-[#6C8568] hover:shadow-2xl hover:scale-105"
               >
                 {hero.primaryButtonText || "Explore Portfolio"} →
               </Link>

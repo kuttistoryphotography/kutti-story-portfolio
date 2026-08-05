@@ -33,7 +33,7 @@ export default function FAQ() {
         }}
       />
     <section className="bg-white pt-15 pb-15">
-      <div className="mx-auto max-w-4xl px-3">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-0">
 
         {/* Heading */}
         <div className="text-center">
@@ -42,7 +42,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </p>
 
-          <h2 className="font-heading mt-2 text-[42px] md:text-[56px] font-light leading-tight tracking-[-0.03em] text-[#2F2F2F]">
+          <h2 className="font-heading mt-2 text-[30px] sm:text-[38px] md:text-[56px] font-light leading-tight tracking-[-0.03em] text-[#2F2F2F]">
             Everything You Need to Know
           </h2>
 
@@ -54,7 +54,7 @@ export default function FAQ() {
         </div>
 
         {/* FAQ Items */}
-        <div className="mt-3 space-y-3">
+        <div className="mt-6 space-y-5">
 
           {faqs.map((faq, index) => {
 
@@ -63,7 +63,7 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="group overflow-hidden rounded-[12px] border border-[#E8E2D6] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
+                className="group overflow-hidden rounded-[24px] border border-[#ECE8E1] bg-white shadow-sm transition-all duration-300 hover:shadow-md"
               >
 
                 <button
@@ -71,19 +71,17 @@ export default function FAQ() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                   id={`faq-question-${index}`}
-                  className="flex w-full items-center justify-between px-8 py-8 text-left"
+                  className="flex w-full items-center justify-between gap-3 px-4 py-5 md:px-8 md:py-8 text-left"
                 >
 
                   <h3
-                    className="font-heading text-[26px] md:text-[34px] lg:text-[38px] font-light leading-[1.25] tracking-[-0.03em] text-[#2F2F2F] transition-colors duration-300 group-hover:text-[#7A8450]"
+                    className="flex-1 font-heading text-[15px] sm:text-[19px] md:text-[28px] lg:text-[34px] font-light leading-[1.35] tracking-[-0.02em] text-[#2F2F2F] pr-4"
                   >
                     {faq.question}
                   </h3>
 
                   <ChevronDown
-                    size={22}
-                    strokeWidth={1.5}
-                    className={`text-[#7A8450] transition-transform duration-500 ${
+                    className={`w-5 h-5 md:w-6 md:h-6 shrink-0 text-[#7A8450] transition-transform duration-500 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -102,7 +100,7 @@ export default function FAQ() {
                 >
                   <div className="overflow-hidden">
 
-                    <p className="px-8 pb-8 text-[17px] leading-8 font-body text-[#666666]">
+                    <p className="px-5 pb-6 md:px-8 md:pb-8 text-[15px] md:text-[17px] leading-7 text-gray-600">
                       {faq.answer}
                     </p>
 
