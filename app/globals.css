@@ -1,11 +1,16 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Balery";
-  src: url("/fonts/Balery.woff") format("woff");
-  font-weight: 400;
+  font-family: "Vodan";
+  src: url("/fonts/VodanDemo.woff2") format("woff2"),
+       url("/fonts/VodanDemo.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+.font-vodan {
+  font-family: "Vodan", serif;
 }
 
 @font-face {
@@ -14,10 +19,6 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-.font-balery {
-  font-family: "Balery", serif;
 }
 
 .font-transcity {
@@ -307,3 +308,11 @@ section {
   font-family: var(--font-body), sans-serif;
 }
 
+.font-vodan {
+  font-family: "Vodan", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
