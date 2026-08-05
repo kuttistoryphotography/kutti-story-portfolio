@@ -91,37 +91,42 @@ export default function FilmsPage() {
     <>
       <Navbar />
 
-      <main className="pt-28 lg:pt-32 min-h-screen bg-[#FAFAF8]">
+      <main className="pt-36 lg:pt-40 min-h-screen bg-[#FAFAF8]">
 
         {/* Hero Section */}
-        <section className="pt-4 pb-8 md:pt-6 md:pb-10 px-6">
+        
+        <section className="pt-6 pb-16 md:pt-10 md:pb-20 px-6">
           <div className="mx-auto max-w-6xl text-center">
-            <p className="uppercase tracking-[8px] text-[#B79A5F] text-sm">
-              Kutti Story Photography
-            </p>
-              <div className="h-15"></div>
+            <div className="h-28 bg-white-500"></div>
+                      
             <h1
               className="
                 font-vodan
-                text-[30px]
-                sm:text-[38px]
-                md:text-[48px]
+                text-[20px]
+                sm:text-[28px]
+                md:text-[42px]
                 lg:text-[58px]
                 xl:text-[68px]
-                leading-[1.05]
-                tracking-[-0.01em]
-                text-[#1F1F1F]
-                whitespace-nowrap
+                leading-[1.1]
+                tracking-[-0.02em]
                 text-center
               "
             >
-              Cinematic Wedding Films &amp; Love Stories
+              <span className="hidden lg:inline">
+                Cinematic Wedding Films &amp; Love Stories
+              </span>
+
+              <span className="lg:hidden">
+                Cinematic Wedding Films
+                <br />
+                &amp; Love Stories
+              </span>
             </h1>
           </div>
         </section>
         
         {/* Featured Film */}
-        <section className="mx-auto max-w-[1900px] px-5 md:px-8">
+        <section className="mx-auto mt-12 md:mt-16 max-w-[1900px] px-5 md:px-8">
 
           <h2 className="mb-8 font-heading text-3xl md:text-5xl font-light text-[#2D2D2D]">
             Featured Film
