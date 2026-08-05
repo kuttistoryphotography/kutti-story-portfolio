@@ -99,8 +99,8 @@ export default function FilmsPage() {
             <p className="uppercase tracking-[8px] text-[#B79A5F] text-sm">
               Kutti Story Photography
             </p>
-
-            <h1 className="mt-5 font-heading text-4xl md:text-6xl leading-tight text-[#3F5A4A]">
+              <div className="h-5"></div>
+            <h1 className="mt-5 font-transcity text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-[0.02em] text-[#1F1F1F]">
               Cinematic Wedding Films
               <br className="md:hidden" />
               <span className="md:ml-2">&amp; Love Stories</span>

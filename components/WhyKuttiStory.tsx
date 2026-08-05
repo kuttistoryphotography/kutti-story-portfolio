@@ -8,8 +8,8 @@ export default function WhyKuttiStory() {
         {/* Top Heading */}
         <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-4 items-start">
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-wide text-[#2F5DB2] leading-tight">
-             Why Choose Kutti Story Photography?
+          <h2 className="font-balery text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-normal text-[#2F5DB2]">
+            Why Choose Kutti Story Photography?
           </h2>
 
           <p className="text-base sm:text-lg leading-8 sm:leading-9 text-[#4B4B4B]">
@@ -44,10 +44,7 @@ export default function WhyKuttiStory() {
                 “
               </div>
 
-              <h3
-                className="mt-2 text-4xl lg:text-5xl leading-tight font-light text-[#6F6B63]"
-                style={{ fontFamily: "serif" }}
-              >
+              <h3 className="font-balery mt-2 text-5xl lg:text-6xl leading-[1.05] text-[#6F6B63]">
                 A team that
                 <br />
                 exceeds

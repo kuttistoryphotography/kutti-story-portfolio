@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Balery";
+  src: url("/fonts/Balery.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Transcity";
+  src: url("/fonts/Transcity.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-balery {
+  font-family: "Balery", serif;
+}
+
+.font-transcity {
+  font-family: "Transcity", serif;
+}
+
 /* ===========================
    Color Palette
 =========================== */
@@ -282,3 +306,4 @@ section {
 .font-body {
   font-family: var(--font-body), sans-serif;
 }
+
