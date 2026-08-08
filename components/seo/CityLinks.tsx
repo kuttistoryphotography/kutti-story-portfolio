@@ -43,7 +43,7 @@ export default function CityLinks({ currentCity }: CityLinksProps) {
             </Link>
           ))}
         </div>
-<div className="h-5 bg-white-500"></div>
+            <div className="h-5 bg-white-500"></div>
       </div>
     </section>
   );
