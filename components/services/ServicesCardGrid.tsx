@@ -53,7 +53,7 @@ export default function ServicesCardGrid({
                 <div className="relative h-[260px] md:h-[220px] overflow-hidden">
                   <img
                     src={service.coverImage}
-                    alt={service.title}
+                    alt={`${service.title} in ${city.city} | Kutti Story Photography`}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
 

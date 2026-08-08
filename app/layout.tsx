@@ -26,12 +26,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kuttistoryphotography.in"),
 
   title: {
-    default: "Best Wedding Photography in Madurai | Kutti Story Photography",
+    default: "Best Wedding Photographer in Madurai | Candid Wedding Photography | Kutti Story Photography",
     template: "%s | Kutti Story Photography",
   },
 
   description:
-    "Best Wedding Photography in Madurai. Candid Wedding Photography, Pre Wedding, Engagement, Maternity, Baby Shoot, Event Photography & Videography across Tamil Nadu.",
+    "Looking for the best wedding photographer in Madurai? Kutti Story Photography specializes in candid wedding photography, cinematic wedding films, pre-wedding shoots, engagement photography, maternity, baby shoots, and event videography across Tamil Nadu.",
+  
+  category: "Photography",
 
   keywords: [
     "Best Wedding Photography in Madurai",
@@ -45,6 +47,16 @@ export const metadata: Metadata = {
     "Event Photography",
     "Tamil Nadu Wedding Photographer",
     "Kutti Story Photography",
+    "Best Wedding Photographer in Madurai",
+    "Wedding Photography in Madurai",
+    "Candid Wedding Photographer Madurai",
+    "Wedding Videographer Madurai",
+    "Wedding Photography Packages Madurai",
+    "Pre Wedding Shoot Madurai",
+    "Engagement Photography Madurai",
+    "Marriage Photography Madurai",
+    "Tamil Wedding Photographer",
+    "Luxury Wedding Photographer Madurai",
   ],
 
   authors: [
@@ -78,7 +90,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://kuttistoryphotography.in",
     siteName: "Kutti Story Photography",
-    title: "Kutti Story Photography",
+    title: "Best Wedding Photographer in Madurai | Kutti Story Photography",
     description:
       "Luxury Wedding Photography & Cinematic Videography in Madurai and across Tamil Nadu.",
     images: [
@@ -93,7 +105,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Kutti Story Photography",
+    title: "Best Wedding Photographer in Madurai | Kutti Story Photography",
     description:
       "Luxury Wedding Photography in Madurai and Tamil Nadu.",
     images: ["/og-image.jpg"],

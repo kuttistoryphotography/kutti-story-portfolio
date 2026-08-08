@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/lib/faq";
+import { CityData } from "@/lib/cities";
+import { getCityFaq } from "@/lib/cityFaq";
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -17,8 +19,26 @@ const faqSchema = {
   })),
 };
 
-export default function FAQ() {
+type FAQProps = {
+  city?: CityData;
+};
+
+export default function FAQ({ city }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const faqItems = city ? getCityFaq(city) : faqs;
+  
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -56,7 +76,7 @@ export default function FAQ() {
         {/* FAQ Items */}
         <div className="mt-6 space-y-5">
 
-          {faqs.map((faq, index) => {
+          {faqItems.map((faq, index) => {
 
             const isOpen = openIndex === index;
 

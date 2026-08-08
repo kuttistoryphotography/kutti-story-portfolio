@@ -1,6 +1,6 @@
 import CloudinaryImage from "@/components/CloudinaryImage";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import { connectDB } from "@/lib/mongodb";
 import Story from "@/models/Story";
 import { notFound } from "next/navigation";

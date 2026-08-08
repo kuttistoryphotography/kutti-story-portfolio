@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Masonry from "react-masonry-css";
 import { motion } from "framer-motion";
+import { CityData } from "@/lib/cities";
 
 
   interface PortfolioCard {
@@ -20,7 +21,13 @@ import { motion } from "framer-motion";
     1024: 2,
   };
 
-  export default function FeaturedGallery() {
+  type FeaturedGalleryProps = {
+    city?: CityData;
+  };
+
+  export default function FeaturedGallery({
+    city,
+  }: FeaturedGalleryProps) {
   const [cards, setCards] = useState<PortfolioCard[]>([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const categories = [
@@ -88,7 +95,9 @@ const visibleCards = cards
                 <div className="relative aspect-square overflow-hidden rounded-2xl">
                   <CloudinaryImage
                     src={card.image}
-                    alt={`${card.title} | Kutti Story Photography - Wedding Photography in Madurai`}
+                    alt={`${card.title} | Kutti Story Photography - Wedding Photography in ${
+                      city?.city || "Madurai"
+                    }`}
                     fill
                     optimizationWidth={500}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -134,7 +143,9 @@ const visibleCards = cards
                   >
                     <CloudinaryImage
                       src={card.image}
-                      alt={card.title}
+                      alt={`${card.title} | Wedding Photography in ${
+                        city?.city || "Madurai"
+                      } | Kutti Story Photography`}
                       fill
                       optimizationWidth={800}
                       className="object-cover object-[50%_20%] transition duration-700 group-hover:scale-105"

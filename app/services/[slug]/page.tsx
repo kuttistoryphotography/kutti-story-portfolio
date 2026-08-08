@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import CloudinaryImage from "@/components/CloudinaryImage";
 
 import { connectDB } from "@/lib/mongodb";
@@ -187,7 +187,7 @@ export default async function ServiceDetailsPage({
 
                 <CloudinaryImage
                   src={service.coverImage}
-                  alt={service.title}
+                  alt={`${service.title} in ${service.city || "Madurai"} | Kutti Story Photography`}
                   fill
                   optimizationWidth={1800}
                   sizes="100vw"

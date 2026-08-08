@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { connectDB } from "@/lib/mongodb";
 import Story from "@/models/Story";
+import { cities } from "@/lib/cities";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://kuttistoryphotography.in";
@@ -64,5 +65,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...storyPages];
+  const cityPages: MetadataRoute.Sitemap = Object.values(cities).map(
+    (city) => ({
+      url: city.canonical,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    })
+  );
+
+  return [
+    ...staticPages,
+    ...cityPages,
+    ...storyPages,
+  ];
 }

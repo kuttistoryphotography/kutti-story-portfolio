@@ -3,12 +3,21 @@
 import { useEffect, useState } from "react";
 import { useHomepage } from "@/context/HomepageContext";
 import Image from "next/image";
+import { CityData } from "@/lib/cities";
 
 import Container from "@/components/Container";
 
 import Link from "next/link";
 
-export default function HeroSlider() {
+type HeroSliderProps = {
+  city?: CityData;
+  pageType?: "home" | "city";
+};
+
+export default function HeroSlider({
+  city,
+  pageType = "home",
+}: HeroSliderProps) {
 
   const [current, setCurrent] = useState(0);
 
@@ -24,10 +33,12 @@ export default function HeroSlider() {
   });
 
   const [heroImages, setHeroImages] = useState<string[]>([]);
-  const { homepage } = useHomepage();
+  
+  const homepageContext = useHomepage();
+  const homepage = homepageContext?.homepage;
 
   useEffect(() => {
-    if (!homepage?.hero) return;
+    if (!homepage?.hero && pageType === "home") return;
 
     const heroData = homepage.hero;
 
@@ -98,8 +109,8 @@ export default function HeroSlider() {
               src={image}
               alt={
                 hero.heading
-                  ? `${hero.heading} | Wedding Photography in Madurai by Kutti Story Photography`
-                  : "Luxury Wedding Photography in Madurai by Kutti Story Photography"
+                  ? `${hero.heading} | Best Wedding Photographer in Madurai`
+                  : "Best Wedding Photographer in Madurai | Kutti Story Photography"
               }
               fill
               priority={index === 0}
@@ -135,8 +146,8 @@ export default function HeroSlider() {
                 md:tracking-[8px] 
                 text-white"
               >
-                {hero.heading || "Best Wedding Photography in Madurai"}
-              </h1>
+              {hero.heading ||
+                "Best Wedding Photographer in Madurai | Candid Wedding Photography"}              </h1>
 
               <div className="mx-auto mt-8 h-px w-24 bg-[#C6A96B]" />
 
@@ -145,7 +156,8 @@ export default function HeroSlider() {
               </p>
 
               <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-white/90 leading-relaxed">
-                {hero.paragraph}
+                {hero.paragraph ||
+                  "Kutti Story Photography is a leading wedding photography and videography studio in Madurai, specializing in candid wedding photography, cinematic wedding films, engagement photography, pre-wedding shoots, maternity photography, baby photography, and event coverage across Tamil Nadu."}
               </p>
 
               <Link

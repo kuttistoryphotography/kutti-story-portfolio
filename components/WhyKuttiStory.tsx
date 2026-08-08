@@ -1,6 +1,13 @@
 "use client";
+import { CityData } from "@/lib/cities";
 
-export default function WhyKuttiStory() {
+type WhyKuttiStoryProps = {
+  city?: CityData;
+};
+
+export default function WhyKuttiStory({
+  city,
+}: WhyKuttiStoryProps) {
   return (
     <section className="bg-white py-24">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
@@ -9,24 +16,48 @@ export default function WhyKuttiStory() {
         <div className="grid grid-cols-1 lg:grid-cols-[32%_60%] gap-4 items-start">
 
           <h2 className="font-balery text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-normal text-[#2F5DB2]">
-            Why Choose Kutti Story Photography?
+            {city
+            ? `Why Choose Kutti Story Photography in ${city.city}?`
+            : "Why Choose Kutti Story Photography?"}
           </h2>
 
           <p className="text-base sm:text-lg leading-8 sm:leading-9 text-[#4B4B4B]">
-            At <strong>Kutti Story Photography</strong>, we specialize in
-            <strong> wedding photography in Madurai</strong>, capturing authentic
-            emotions and timeless moments with a creative, cinematic approach.
-            From traditional Tamil weddings and candid wedding photography to
-            engagement sessions, pre-wedding shoots, maternity photography,
-            baby photography, and wedding films, we create images that tell
-            your story beautifully.
+            {city ? (
+              <>
+                At <strong>Kutti Story Photography</strong>, we specialize in
+                <strong> wedding photography in {city.city}</strong>, capturing
+                authentic emotions and timeless moments with a cinematic storytelling
+                approach.
 
-            <br /><br />
+                <br />
+                <br />
 
-            Based in Madurai, we proudly serve couples and families across
-            Tamil Nadu, including Chennai, Coimbatore, Trichy, Dindigul,
-            Theni, Sivakasi, Virudhunagar, Tirunelveli, and destination
-            weddings throughout South India.
+                From candid wedding photography and traditional Tamil weddings to
+                engagement photography, pre-wedding shoots, maternity photography,
+                baby photography, and cinematic wedding films, we create memories
+                that last forever.
+
+                <br />
+                <br />
+
+                We proudly serve couples throughout <strong>{city.city}</strong> and
+                across Tamil Nadu with premium photography and videography services.
+              </>
+            ) : (
+              <>
+                At <strong>Kutti Story Photography</strong>, we specialize in
+                <strong> wedding photography in Madurai</strong>, capturing authentic
+                emotions and timeless moments with a creative, cinematic approach.
+
+                <br />
+                <br />
+
+                Based in Madurai, we proudly serve couples and families across
+                Tamil Nadu, including Chennai, Coimbatore, Trichy, Dindigul,
+                Theni, Sivakasi, Virudhunagar, Tirunelveli, and destination
+                weddings throughout South India.
+              </>
+            )}
           </p>
 
         </div>

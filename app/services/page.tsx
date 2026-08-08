@@ -5,8 +5,8 @@ import Link from "next/link";
 
 import CloudinaryImage from "@/components/CloudinaryImage";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 import ServicesShowcase from "@/components/services/ServicesShowcase";
 import ServicesCardGrid from "@/components/services/ServicesCardGrid";

@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { Calendar, MessageCircle } from "lucide-react";
+import { CityData } from "@/lib/cities";
 
-export default function BookingCTA() {
+type BookingCTAProps = {
+  city?: CityData;
+};
+
+export default function BookingCTA({
+  city,
+}: BookingCTAProps) {
   return (
     <section className="bg-white pt-18 pb-32">
       <div className="h-5 bg-white-500"></div> 
@@ -11,19 +18,32 @@ export default function BookingCTA() {
         <div className="mx-auto max-w-4xl rounded-[32px] bg-[#849669] px-6 py-14 md:px-16 md:py-16 text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)]">
 
           <p className="mt-4 uppercase tracking-[8px] text-white/80 text-sm">
-            Ready to Begin?
+            {city ? `Wedding Photography in ${city.city}` : "Ready to Begin?"}
           </p>
 
           <h2 className="mt-3 font-heading text-3xl md:text-5xl font-light leading-tight text-white">
-            Let's Tell Your Story
+            {city
+              ? `Book Your Wedding Photography in ${city.city}`
+              : "Let's Tell Your Story"}
           </h2>
 
           <div className="mx-auto max-w-4xl">
 
             <p className="mt-6 text-base md:text-lg leading-8 text-white/90">
-              Every celebration deserves to be remembered beautifully.
-              We'd be honoured to capture your story with timeless
-              photographs and cinematic films.
+              {city ? (
+                <>
+                  Looking for the best wedding photographer in{" "}
+                  <strong>{city.city}</strong>? Contact Kutti Story Photography today
+                  to book your wedding photography, candid photography, cinematic
+                  wedding films, engagement shoot, or pre-wedding session.
+                </>
+              ) : (
+                <>
+                  Every celebration deserves to be remembered beautifully.
+                  We'd be honoured to capture your story with timeless
+                  photographs and cinematic films.
+                </>
+              )}
             </p>
           
           </div>
@@ -32,7 +52,9 @@ export default function BookingCTA() {
           <div className="hidden md:flex justify-center gap-4 mt-10">
 
             <Link
-              href="/contact-us"
+              href="https://www.kuttistoryphotography.com/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-full border border-white px-10 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#849669]"
             >
               <Calendar className="h-5 w-5" />
@@ -57,7 +79,9 @@ export default function BookingCTA() {
           <div className="mt-10 flex flex-col items-center gap-4 md:hidden">
 
             <Link
-              href="/contact-us"
+              href="https://www.kuttistoryphotography.com/contact-us"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-14 w-55 items-center justify-center gap-2 rounded-full border border-white text-white font-semibold"
             >
               <Calendar className="h-5 w-5" />
