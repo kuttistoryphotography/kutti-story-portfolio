@@ -213,12 +213,14 @@ export default function FeaturedFilms() {
         </div>
 
         {/* Button */}
+
         <div className="h-4 bg-white-500"></div> 
+
         <div className="mt-16 text-center">
 
           <Link
             href={settings.buttonLink}
-            className="inline-flex items-center rounded-full border border-[#7A8450] px-10 py-3 text-[#7A8450] transition-all duration-300 hover:bg-[#7A8450] hover:text-white"
+            className="inline-flex  items-center rounded-full border border-[#7A8450] px-20 py-3 w-45 justify-center text-[#7A8450] transition-all duration-300 hover:bg-[#7A8450] hover:text-white"
           >
             {settings.buttonText} →
           </Link>

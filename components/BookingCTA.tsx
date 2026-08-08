@@ -55,7 +55,7 @@ export default function BookingCTA({
               href="https://www.kuttistoryphotography.com/contact-us"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border border-white px-10 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#849669]"
+              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
             >
               <Calendar className="h-5 w-5" />
               Book Your Session
@@ -65,7 +65,7 @@ export default function BookingCTA({
               href="https://wa.me/919342013600"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border border-white px-10 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#849669]"
+              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
             >
               <MessageCircle className="h-5 w-5" />
               Chat on WhatsApp
@@ -73,7 +73,7 @@ export default function BookingCTA({
             
           </div>
           {/* gap*/}
-          <div className="h-4 bg-white-500"></div> 
+          <div className="h-2 bg-white-500"></div> 
 
           {/* Mobile Buttons */}
           <div className="mt-10 flex flex-col items-center gap-4 md:hidden">
@@ -82,7 +82,7 @@ export default function BookingCTA({
               href="https://www.kuttistoryphotography.com/contact-us"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-14 w-55 items-center justify-center gap-2 rounded-full border border-white text-white font-semibold"
+              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
             >
               <Calendar className="h-5 w-5" />
               Book Your Session
@@ -92,9 +92,9 @@ export default function BookingCTA({
               href="https://wa.me/919342013600"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-14 w-55 items-center justify-center gap-2 rounded-full border border-white text-white font-semibold"
+              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
             >
-              <MessageCircle className="h-4 w-5" />
+              <MessageCircle className="h-2 w-5" />
               Chat on WhatsApp
             </a>
             <div className="h-2 bg-white-500"></div> 

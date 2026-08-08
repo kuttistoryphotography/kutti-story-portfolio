@@ -163,8 +163,7 @@ export default function HeroSlider({
               <Link
                 aria-label="View Wedding Photography Portfolio"
                 href={hero.primaryButtonLink || "/portfolio"}
-                className="inline-block mt-12 rounded-full bg-[#7F977B] px-7 py-3
-                md:px-10 md:py-4 text-sm uppercase tracking-[5px] text-white shadow-lg transition-all duration-500 hover:bg-[#6C8568] hover:shadow-2xl hover:scale-105"
+                className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
               >
                 {hero.primaryButtonText || "Explore Portfolio"} →
               </Link>

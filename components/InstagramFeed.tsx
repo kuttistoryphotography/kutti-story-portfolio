@@ -68,7 +68,8 @@ export default function InstagramFeed() {
           <Link
             href={instagram.buttonUrl}
             target="_blank"
-            className="inline-flex items-center gap-3 rounded-full bg-[#849669] px-8 py-3 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
+            rel="noopener noreferrer"
+            className="inline-flex h-12 w-56 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
           >
             <FaInstagram size={19} />
             {instagram.buttonText}

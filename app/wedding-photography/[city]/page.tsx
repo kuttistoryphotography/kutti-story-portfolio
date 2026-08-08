@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import FAQ from "@/components/FAQ";
 import Navbar from "@/components/layout/Navbar";
+import CityLinks from "@/components/seo/CityLinks";
 import type { Metadata } from "next";
 import Script from "next/script";
 import Footer from "@/components/layout/Footer";
@@ -141,10 +142,12 @@ export default async function WeddingPhotographyPage({
 
     <FeaturedGallery city={city} />
 
-    <TestimonialsSlider />
+    <TestimonialsSlider/>
 
     <FAQ city={city} />
 
+    <CityLinks currentCity={city} />
+    
     <BookingCTA city={city} />
 
     <Footer />
