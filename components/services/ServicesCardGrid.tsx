@@ -53,7 +53,7 @@ export default function ServicesCardGrid({
                 <div className="relative h-[260px] md:h-[220px] overflow-hidden">
                   <img
                     src={service.coverImage}
-                    alt={`${service.title} in ${city.city} | Kutti Story Photography`}
+                    alt={`${service.title} | Kutti Story Photography`}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
 
@@ -68,10 +68,6 @@ export default function ServicesCardGrid({
                   <h3 className="text-xl md:text-3xl font-light tracking-tight text-[#2D2D2D]">
                     {service.title}
                   </h3>
-
-                  <pre className="text-xs whitespace-pre-wrap bg-white p-2">
-                    {JSON.stringify(service.shortDescription)}
-                  </pre>
 
                   {service.price && (
                     <p className="mt-8 font-medium text-[#8A9A7B]">
