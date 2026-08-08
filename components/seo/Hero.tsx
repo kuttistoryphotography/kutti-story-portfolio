@@ -19,11 +19,11 @@ export default function Hero({ city }: HeroProps) {
         alt={hero.title}
         fill
         priority
-        className="object-cover object-[75%_center]"
+        className="object-cover object-[75%_30%]"
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70 md:bg-black/65" />
+      <div className="absolute inset-0 bg-black/50 md:bg-black/55" />
 
       {/* Left Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-transparent" />

@@ -147,7 +147,7 @@ export default async function WeddingPhotographyPage({
     <FAQ city={city} />
 
     <CityLinks currentCity={city} />
-    
+
     <BookingCTA city={city} />
 
     <Footer />
