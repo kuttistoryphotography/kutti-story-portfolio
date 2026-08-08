@@ -220,7 +220,7 @@ export default function FeaturedFilms() {
 
           <Link
             href={settings.buttonLink}
-            className="inline-flex  items-center rounded-full border border-[#7A8450] px-20 py-3 w-45 justify-center text-[#7A8450] transition-all duration-300 hover:bg-[#7A8450] hover:text-white"
+            className="inline-flex h-12 w-45 items-center justify-center gap-3 rounded-full bg-[#98A869] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-[0_0_15px_rgba(132,150,105,0.7),0_0_30px_rgba(132,150,105,0.4)]"
           >
             {settings.buttonText} →
           </Link>

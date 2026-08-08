@@ -53,7 +53,7 @@ export default function Hero({ city }: HeroProps) {
 
             <Link
               href="/portfolio"
-              className="inline-flex h-14 w-30 items-center justify-center rounded-full border border-white/70 px-8 font-semibold text-white transition hover:bg-white hover:text-black"
+              className="inline-flex h-14 w-40 items-center justify-center rounded-full border border-white/70 px-8 font-semibold text-[#8A9A5B] transition-all duration-300 hover:border-[#849669] hover:bg-[#849669] hover:text-white hover:shadow-[0_0_12px_rgba(132,150,105,0.8),0_0_35px_rgba(132,150,105,0.45)]"
             >
               View Portfolio
             </Link>
@@ -62,7 +62,7 @@ export default function Hero({ city }: HeroProps) {
               href="https://www.kuttistoryphotography.com/contact-us"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-14 w-30 items-center justify-center rounded-full border border-white/70 px-8 font-semibold text-white transition hover:bg-white hover:text-black"
+              className="inline-flex h-14 w-40 items-center justify-center rounded-full border border-white/70 px-8 font-semibold text-[#8A9A5B] transition-all duration-300 hover:border-[#849669] hover:bg-[#849669] hover:text-white hover:shadow-[0_0_12px_rgba(132,150,105,0.8),0_0_35px_rgba(132,150,105,0.45)]"
             >
               Contact Us
             </Link>
@@ -95,7 +95,7 @@ export default function Hero({ city }: HeroProps) {
             ))}
 
           </div>
-            <div className="h-5 bg-white-500"></div>
+          <div className="h-5 bg-white-500"></div>
         </div>
 
       </div>

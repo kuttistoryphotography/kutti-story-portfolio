@@ -55,7 +55,7 @@ export default function BookingCTA({
               href="https://www.kuttistoryphotography.com/contact-us"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
+              className="inline-flex h-12 w-56 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-[0_0_12px_rgba(132,150,105,0.9),0_0_35px_rgba(132,150,105,0.6),0_0_60px_rgba(132,150,105,0.3)]"
             >
               <Calendar className="h-5 w-5" />
               Book Your Session
@@ -65,7 +65,7 @@ export default function BookingCTA({
               href="https://wa.me/919342013600"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
+              className="inline-flex h-12 w-56 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-[0_0_12px_rgba(132,150,105,0.9),0_0_35px_rgba(132,150,105,0.6),0_0_60px_rgba(132,150,105,0.3)]"
             >
               <MessageCircle className="h-5 w-5" />
               Chat on WhatsApp
@@ -82,7 +82,7 @@ export default function BookingCTA({
               href="https://www.kuttistoryphotography.com/contact-us"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
+              className="inline-flex h-12 w-56 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-[0_0_12px_rgba(132,150,105,0.9),0_0_35px_rgba(132,150,105,0.6),0_0_60px_rgba(132,150,105,0.3)]"
             >
               <Calendar className="h-5 w-5" />
               Book Your Session
@@ -92,7 +92,7 @@ export default function BookingCTA({
               href="https://wa.me/919342013600"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 w-64 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-lg"
+              className="inline-flex h-12 w-56 items-center justify-center gap-3 rounded-full bg-[#849669] text-sm font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#6E7E57] hover:shadow-[0_0_12px_rgba(132,150,105,0.9),0_0_35px_rgba(132,150,105,0.6),0_0_60px_rgba(132,150,105,0.3)]"
             >
               <MessageCircle className="h-2 w-5" />
               Chat on WhatsApp

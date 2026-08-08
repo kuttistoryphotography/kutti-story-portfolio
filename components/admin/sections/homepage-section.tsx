@@ -924,7 +924,7 @@ const [activeTab, setActiveTab] = useState<
             )}
 
             Save Page Images
-                    </button>
+            </button>
         </div>
       )}
 
