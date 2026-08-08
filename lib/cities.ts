@@ -42,28 +42,6 @@ export const cities: Record<string, CityData> = {
       serviceIntro:
         "From intimate engagement ceremonies to traditional Tamil weddings, our Madurai wedding photography team focuses on natural emotions, cultural details, elegant portraits, and cinematic storytelling.",
 
-      faq: [
-        {
-          question: "How much does wedding photography cost in Madurai?",
-          answer:
-            "Wedding photography pricing in Madurai depends on the number of functions, coverage hours, photography style, videography requirements, albums, and additional services. Contact Kutti Story Photography for a package based on your wedding requirements.",
-        },
-        {
-          question: "Do you provide candid wedding photography in Madurai?",
-          answer:
-            "Yes. Kutti Story Photography provides candid wedding photography in Madurai, focusing on natural emotions, family interactions, wedding rituals, and memorable moments.",
-        },
-        {
-          question: "Do you cover traditional Tamil weddings in Madurai?",
-          answer:
-            "Yes. We cover traditional Tamil weddings and capture important rituals, family moments, bridal details, groom portraits, ceremonies, and candid emotions.",
-        },
-        {
-          question: "Do you provide wedding videography in Madurai?",
-          answer:
-            "Yes. We offer cinematic wedding videography and wedding films along with photography coverage.",
-        },
-      ],
 
   },
 
@@ -91,28 +69,6 @@ export const cities: Record<string, CityData> = {
     serviceIntro:
       "Our Chennai wedding photography approach combines candid moments, elegant portraits, traditional wedding coverage, and cinematic storytelling to create a complete visual story of your celebration.",
 
-    faq: [
-      {
-        question: "Do you provide wedding photography in Chennai?",
-        answer:
-          "Yes. Kutti Story Photography provides wedding photography and videography services in Chennai for traditional weddings, engagements, receptions, and other wedding celebrations.",
-      },
-      {
-        question: "Do you offer candid wedding photography in Chennai?",
-        answer:
-          "Yes. Our candid wedding photography focuses on genuine emotions, family moments, celebrations, rituals, and natural interactions.",
-      },
-      {
-        question: "Do you provide cinematic wedding films in Chennai?",
-        answer:
-          "Yes. We provide cinematic wedding films designed to tell your wedding story through carefully captured moments and professional editing.",
-      },
-      {
-        question: "Can you cover multiple wedding functions in Chennai?",
-        answer:
-          "Yes. Coverage can be planned for multiple functions depending on your wedding schedule and photography and videography requirements.",
-      },
-    ],
   },
 
   coimbatore: {
@@ -138,24 +94,6 @@ export const cities: Record<string, CityData> = {
 
       serviceIntro:
         "Our Coimbatore wedding photography combines natural candid moments with elegant portraits, traditional ceremony coverage, and cinematic storytelling.",
-
-      faq: [
-        {
-          question: "Do you provide wedding photography in Coimbatore?",
-          answer:
-            "Yes. Kutti Story Photography provides wedding photography and videography services in Coimbatore for weddings, engagements, receptions, and related celebrations.",
-        },
-        {
-          question: "Do you offer candid wedding photography in Coimbatore?",
-          answer:
-            "Yes. We capture natural emotions, family interactions, rituals, celebrations, and genuine wedding moments through candid photography.",
-        },
-        {
-          question: "Do you provide pre-wedding photography in Coimbatore?",
-          answer:
-            "Yes. We provide creative pre-wedding photography sessions that can be planned around your preferred style and location.",
-        },
-      ],
 
   },
 
@@ -183,24 +121,6 @@ export const cities: Record<string, CityData> = {
     serviceIntro:
       "Our Trichy wedding photography focuses on authentic emotions, traditional wedding rituals, family celebrations, elegant portraits, and cinematic storytelling.",
 
-    faq: [
-      {
-        question: "Do you provide wedding photography in Trichy?",
-        answer:
-          "Yes. Kutti Story Photography provides wedding photography and videography services in Trichy for traditional weddings, engagements, receptions, and other celebrations.",
-      },
-      {
-        question: "Do you cover traditional Tamil weddings in Trichy?",
-        answer:
-          "Yes. We capture traditional Tamil wedding rituals, family moments, ceremonies, portraits, and candid emotions.",
-      },
-      {
-        question: "Do you offer cinematic wedding films in Trichy?",
-        answer:
-          "Yes. Cinematic wedding films are available along with photography and videography coverage.",
-      },
-    ],
-
   },
 
   dindigul: {
@@ -227,23 +147,146 @@ export const cities: Record<string, CityData> = {
     serviceIntro:
       "Our Dindigul wedding photography focuses on genuine emotions, cultural traditions, family moments, beautiful portraits, and cinematic storytelling.",
 
-    faq: [
-      {
-        question: "Do you provide wedding photography in Dindigul?",
-        answer:
-          "Yes. Kutti Story Photography provides wedding photography and videography services in Dindigul for weddings, engagements, receptions, and other celebrations.",
-      },
-      {
-        question: "Do you offer candid wedding photography in Dindigul?",
-        answer:
-          "Yes. Our candid photography captures natural emotions and important moments without interrupting the celebration.",
-      },
-      {
-        question: "Do you cover traditional Tamil weddings in Dindigul?",
-        answer:
-          "Yes. We cover traditional Tamil wedding ceremonies and capture important rituals, family interactions, portraits, and candid moments.",
-      },
-    ],
-
+  
   },
+
+  theni: {
+    slug: "theni",
+    city: "Theni",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Theni",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Theni.",
+    heroTitle: "Best Wedding Photographer in Theni",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/theni",
+  },
+
+  sivakasi: {
+    slug: "sivakasi",
+    city: "Sivakasi",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Sivakasi",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Sivakasi.",
+    heroTitle: "Best Wedding Photographer in Sivakasi",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/sivakasi",
+  },
+
+  virudhunagar: {
+    slug: "virudhunagar",
+    city: "Virudhunagar",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Virudhunagar",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Virudhunagar.",
+    heroTitle: "Best Wedding Photographer in Virudhunagar",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/virudhunagar",
+  },
+
+  tirunelveli: {
+    slug: "tirunelveli",
+    city: "Tirunelveli",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Tirunelveli",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Tirunelveli.",
+    heroTitle: "Best Wedding Photographer in Tirunelveli",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/tirunelveli",
+  },
+
+  pondicherry: {
+    slug: "pondicherry",
+    city: "Pondicherry",
+    state: "Puducherry",
+    title: "Best Wedding Photographer in Pondicherry",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Pondicherry.",
+    heroTitle: "Best Wedding Photographer in Pondicherry",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/pondicherry",
+  },
+  salem: {
+    slug: "salem",
+    city: "Salem",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Salem",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Salem.",
+    heroTitle: "Best Wedding Photographer in Salem",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/salem",
+  },
+
+  erode: {
+    slug: "erode",
+    city: "Erode",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Erode",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Erode.",
+    heroTitle: "Best Wedding Photographer in Erode",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/erode",
+  },
+
+  tiruppur: {
+    slug: "tiruppur",
+    city: "Tiruppur",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Tiruppur",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Tiruppur.",
+    heroTitle: "Best Wedding Photographer in Tiruppur",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/tiruppur",
+  },
+
+  thanjavur: {
+    slug: "thanjavur",
+    city: "Thanjavur",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Thanjavur",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Thanjavur.",
+    heroTitle: "Best Wedding Photographer in Thanjavur",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/thanjavur",
+  },
+
+  kanyakumari: {
+    slug: "kanyakumari",
+    city: "Kanyakumari",
+    state: "Tamil Nadu",
+    title: "Best Wedding Photographer in Kanyakumari",
+    description:
+      "Kutti Story Photography offers premium wedding photography, candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, and wedding videography in Kanyakumari.",
+    heroTitle: "Best Wedding Photographer in Kanyakumari",
+    heroSubtitle:
+      "Capturing timeless wedding stories with cinematic photography.",
+    canonical:
+      "https://kuttistoryphotography.in/wedding-photography/kanyakumari",
+  },
+
 };

@@ -1,6 +1,12 @@
 import { CityData } from "./cities";
 
 export function getCityFaq(city: CityData) {
+  // Use city-specific FAQ content if available
+  if (city.faq && city.faq.length > 0) {
+    return city.faq;
+  }
+
+  // Default FAQ for cities without custom FAQ content
   return [
     {
       question: `Do you provide wedding photography in ${city.city}?`,
@@ -34,7 +40,8 @@ export function getCityFaq(city: CityData) {
 
     {
       question: `How early should I book my wedding photographer?`,
-      answer: `We recommend booking your wedding photographer 3–6 months in advance whenever possible, especially for popular wedding dates.`,
+      answer:
+        "We recommend booking your wedding photographer 3–6 months in advance whenever possible, especially for popular wedding dates.",
     },
   ];
 }
