@@ -74,7 +74,7 @@ export default function HeroSlider({
 
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroImages.length);
-    }, 3000);
+    }, 6000);
 
     return () => clearInterval(timer);
   }, [heroImages]);
@@ -104,29 +104,27 @@ export default function HeroSlider({
 
           {/* Hero Images */}
           {heroImages.map((image: string, index: number) => (
-            <Image
-              key={`${index}-${image}`}
-              src={image}
-              alt={
-                hero.heading
-                  ? `${hero.heading} | Best Wedding Photographer in Madurai`
-                  : "Best Wedding Photographer in Madurai | Kutti Story Photography"
-              }
-              fill
-              priority={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-              decoding={index === 0 ? "sync" : "async"}
-              sizes="(max-width:640px) 100vw,
-                     (max-width:1024px) 95vw,
-                     75vw"
-              unoptimized
-              className={`absolute inset-0 object-cover transition-all duration-[2500ms] motion-reduce:transition-none ${
-                current === index
+          <Image
+            key={`${index}-${image}`}
+            src={image}
+            alt={
+              hero.heading
+                ? `${hero.heading} | Best Wedding Photographer in Madurai`
+                : "Best Wedding Photographer in Madurai | Kutti Story Photography"
+            }
+            fill
+            priority={index === 0}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            loading={index === 0 ? "eager" : "lazy"}
+            sizes="100vw"
+            quality={75}
+            className={`absolute inset-0 object-cover transition-all duration-[2500ms] motion-reduce:transition-none ${
+              current === index
                 ? "opacity-100 scale-100 sm:scale-110"
                 : "opacity-0 scale-100"
-              }`}
-            />
-          ))}
+            }`}
+          />
+        ))}
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/10" />
