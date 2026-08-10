@@ -13,6 +13,7 @@ import FeaturedGallery from "@/components/FeaturedGallery";
 import BookingCTA from "@/components/BookingCTA";
 import MobileHero from "@/components/seo/MobileHero";
 import TestimonialsSlider from "@/components/TestimonialsSlider";
+import CitySEOSection from "@/components/seo/CitySEOSection";
 
 export async function generateStaticParams() {
   return Object.keys(cities).map((city) => ({
@@ -147,6 +148,8 @@ export default async function WeddingPhotographyPage({
     <FAQ city={city} />
 
     <CityLinks currentCity={city} />
+
+    <CitySEOSection city={city} />
 
     <BookingCTA city={city} />
 
