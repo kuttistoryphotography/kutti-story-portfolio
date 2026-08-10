@@ -124,7 +124,8 @@ export default function HeroSlider({
             quality={75}
             className={`absolute inset-0 object-cover transition-all duration-[2500ms] motion-reduce:transition-none ${
               current === index
-                
+                ? "opacity-100 scale-100 sm:scale-110"
+                : "opacity-0 scale-100"
             }`}
           />
         ))}
