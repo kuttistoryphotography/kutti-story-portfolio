@@ -12,11 +12,13 @@ import Link from "next/link";
 type HeroSliderProps = {
   city?: CityData;
   pageType?: "home" | "city";
+  initialHeroImage?: string;
 };
 
 export default function HeroSlider({
-  city,
+  city: _city,
   pageType = "home",
+  initialHeroImage,
 }: HeroSliderProps) {
 
   const [current, setCurrent] = useState(0);
@@ -32,7 +34,9 @@ export default function HeroSlider({
     primaryButtonLink: "",
   });
 
-  const [heroImages, setHeroImages] = useState<string[]>([]);
+  const [heroImages, setHeroImages] = useState<string[]>(
+    initialHeroImage ? [initialHeroImage] : []
+  );
   
   const homepageContext = useHomepage();
   const homepage = homepageContext?.homepage;

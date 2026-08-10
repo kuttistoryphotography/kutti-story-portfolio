@@ -10,8 +10,16 @@ import FAQ from "@/components/FAQ";
 import FeaturedFilms from "@/components/FeaturedFilms";
 import BookingCTA from "@/components/BookingCTA";
 import Footer from "@/components/layout/Footer";
+import { connectDB } from "@/lib/mongodb";
+import Homepage from "@/models/Homepage";
 
-export default function Home() {
+export default async function Home() {
+  await connectDB();
+
+  const homepage = await Homepage.findOne().lean();
+
+  const initialHeroImage =
+    homepage?.settings?.hero?.heroSliderImages?.[0]?.image || "";
   return (
     <HomepageProvider>
       <script
@@ -62,7 +70,7 @@ export default function Home() {
         }}
       />
       <Navbar />
-      <HeroSlider />
+      <HeroSlider initialHeroImage={initialHeroImage} />
       <FeaturedGallery />
       <WhyKuttiStory />
       <FeaturedFilms />
