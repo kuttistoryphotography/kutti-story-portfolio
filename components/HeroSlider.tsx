@@ -78,7 +78,7 @@ export default function HeroSlider({
 
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
+    }, 2500);
 
     return () => clearInterval(timer);
   }, [heroImages]);
