@@ -117,8 +117,7 @@ export default function HeroSlider({
                 : "Best Wedding Photographer in Madurai | Kutti Story Photography"
             }
             fill
-            priority={index === 0}
-            fetchPriority={index === 0 ? "high" : "auto"}
+            preload={index === 0}
             loading={index === 0 ? "eager" : "lazy"}
             sizes="100vw"
             quality={75}
