@@ -8,9 +8,10 @@ export type CityData = {
   heroSubtitle: string;
   canonical: string;
 
-  // City-specific SEO content
   seoIntro?: string;
   serviceIntro?: string;
+  localAreas?: string;
+
   faq?: {
     question: string;
     answer: string;
@@ -31,16 +32,19 @@ export const cities: Record<string, CityData> = {
     heroTitle: "Best Wedding Photographer in Madurai",
 
     heroSubtitle:
-      "Capturing timeless wedding stories with cinematic photography.",
+      "Candid wedding photography and cinematic wedding films for unforgettable celebrations in Madurai.",
+    
+    canonical: 
+       "https://kuttistoryphotography.in/wedding-photography/madurai",
 
-    canonical:
-      "https://kuttistoryphotography.in/wedding-photography/madurai",
+    seoIntro:
+      "Kutti Story Photography is a Madurai-based wedding photography studio specializing in candid wedding photography, traditional Tamil wedding photography, cinematic wedding films, engagement photography, pre-wedding shoots, and wedding videography. We document weddings across Madurai, from intimate family celebrations to large traditional marriage functions.",
 
-      seoIntro:
-        "Kutti Story Photography is a wedding photography studio serving Madurai and surrounding areas. We specialize in candid wedding photography, traditional Tamil wedding photography, cinematic wedding films, engagement photography, pre-wedding shoots, maternity photography, and baby photography.",
-
-      serviceIntro:
-        "From intimate engagement ceremonies to traditional Tamil weddings, our Madurai wedding photography team focuses on natural emotions, cultural details, elegant portraits, and cinematic storytelling.",
+    serviceIntro:
+      "Our Madurai wedding photography combines candid moments, traditional Tamil wedding rituals, natural couple portraits, bridal portraits, family celebrations, and cinematic storytelling. We focus on real emotions and meaningful details so every wedding gallery feels personal to the couple and their family.",
+    
+    localAreas:
+  "We serve couples across Madurai and nearby areas, including Anna Nagar, KK Nagar, Tallakulam, Arapalayam, Thiruppalai, Villapuram, and surrounding wedding venues.",
 
       faq: [
         {

@@ -137,20 +137,28 @@ export default async function ServiceDetailsPage({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": service.schemaType || "Service",
+    "@type": "Service",
+
+    "@id": `${serviceUrl}#service`,
 
     name: service.title,
 
     description:
       service.metaDescription ||
-      service.description,
-
-    image: service.coverImage,
+      service.description ||
+      service.shortDescription,
 
     url: serviceUrl,
 
+    image: service.coverImage
+      ? [service.coverImage]
+      : undefined,
+
+    serviceType: service.title,
+
     provider: {
       "@type": "LocalBusiness",
+      "@id": "https://kuttistoryphotography.in/#business",
       name: "Kutti Story Photography",
       url: siteUrl,
     },
@@ -160,21 +168,60 @@ export default async function ServiceDetailsPage({
       name: service.city || "Madurai",
     },
 
-    offers: {
-      "@type": "Offer",
-      price: service.price || "",
-      priceCurrency: "INR",
-    },
+    ...(service.price
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: service.price,
+            priceCurrency: "INR",
+            url: serviceUrl,
+            availability: "https://schema.org/InStock",
+          },
+        }
+      : {}),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${siteUrl}/services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: serviceUrl,
+      },
+    ],
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
-      />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(jsonLd),
+      }}
+    />
+
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(breadcrumbLd),
+      }}
+    />
 
       <Navbar />
 

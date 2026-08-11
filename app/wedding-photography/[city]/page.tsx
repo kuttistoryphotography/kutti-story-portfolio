@@ -85,25 +85,26 @@ export default async function WeddingPhotographyPage({
       notFound();
     }
 
-    const schema = {
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "PhotographyBusiness",
+    "@type": "Service",
 
-    name: "Kutti Story Photography",
+    "@id": `${city.canonical}#wedding-photography`,
 
-    url: city.canonical,
-
-    image: "https://kuttistoryphotography.in/og-image.jpg",
-
-    telephone: "+919342013600",
+    name: `Wedding Photography in ${city.city}`,
 
     description: city.description,
 
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: city.city,
-      addressRegion: city.state,
-      addressCountry: "IN",
+    url: city.canonical,
+
+    serviceType: "Wedding Photography",
+
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": "https://kuttistoryphotography.in/#business",
+      name: "Kutti Story Photography",
+      url: "https://kuttistoryphotography.in",
+      telephone: "+919342013600",
     },
 
     areaServed: {
@@ -111,11 +112,39 @@ export default async function WeddingPhotographyPage({
       name: city.city,
     },
 
+    image: "https://kuttistoryphotography.in/og-image.jpg",
+
     priceRange: "₹₹",
 
     sameAs: [
-      "https://www.instagram.com/kuttistory_photography",
+      "https://www.instagram.com/kuttistory_photography/",
       "https://www.facebook.com/share/17MKRZ2Pgi/",
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://kuttistoryphotography.in/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Wedding Photography",
+        item: "https://kuttistoryphotography.in/wedding-photography",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: city.city,
+        item: city.canonical,
+      },
     ],
   };
 
@@ -126,6 +155,14 @@ export default async function WeddingPhotographyPage({
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(schema),
+      }}
+    />
+
+    <Script
+      id="breadcrumb-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(breadcrumbSchema),
       }}
     />
 
