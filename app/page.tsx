@@ -27,19 +27,29 @@ export default async function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ProfessionalService",
+            "@type": ["ProfessionalService", "LocalBusiness"],
             "@id": "https://kuttistoryphotography.in/#business",
 
             name: "Kutti Story Photography",
 
+            alternateName: [
+              "Kutti Story",
+              "Kutti Story Photography Madurai"
+            ],
+
             description:
-              "Kutti Story Photography is the best wedding photographer in Madurai, specializing in candid wedding photography, cinematic wedding films, pre-wedding shoots, engagement photography, maternity photography, baby photography, and wedding videography across Tamil Nadu.",
-
-            image: "https://kuttistoryphotography.in/og-image.jpg",
-
-            logo: "https://kuttistoryphotography.in/logo.png",
+              "Kutti Story Photography is a wedding photography and videography studio in Madurai, specializing in candid wedding photography, cinematic wedding films, pre-wedding photography, engagement photography, maternity photography, baby photography and event photography across Tamil Nadu.",
 
             url: "https://kuttistoryphotography.in",
+
+            image: [
+              "https://kuttistoryphotography.in/og-image.jpg"
+            ],
+
+            logo: {
+              "@type": "ImageObject",
+              url: "https://kuttistoryphotography.in/logo.png"
+            },
 
             telephone: "+919342013600",
 
@@ -54,19 +64,49 @@ export default async function Home() {
             },
 
             areaServed: [
-              "Madurai",
-              "Chennai",
-              "Coimbatore",
-              "Trichy",
-              "Dindigul",
-              "Tamil Nadu"
+              {
+                "@type": "City",
+                name: "Madurai"
+              },
+              {
+                "@type": "City",
+                name: "Chennai"
+              },
+              {
+                "@type": "City",
+                name: "Coimbatore"
+              },
+              {
+                "@type": "City",
+                name: "Trichy"
+              },
+              {
+                "@type": "City",
+                name: "Dindigul"
+              },
+              {
+                "@type": "AdministrativeArea",
+                name: "Tamil Nadu"
+              }
+            ],
+
+            knowsAbout: [
+              "Wedding Photography",
+              "Candid Wedding Photography",
+              "Wedding Videography",
+              "Cinematic Wedding Films",
+              "Pre Wedding Photography",
+              "Engagement Photography",
+              "Maternity Photography",
+              "Baby Photography",
+              "Event Photography"
             ],
 
             sameAs: [
               "https://www.instagram.com/kuttistory_photography/",
               "https://www.facebook.com/share/17MKRZ2Pgi/"
             ]
-          }),
+          })
         }}
       />
       <Navbar />
