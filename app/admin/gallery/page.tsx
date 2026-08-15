@@ -1,8 +1,9 @@
 "use client";
 
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function StoryGalleryPage() {
+function StoryGalleryContent() {
   const searchParams = useSearchParams();
 
   const storyId = searchParams.get("storyId");
@@ -21,5 +22,21 @@ export default function StoryGalleryPage() {
         {storyId}
       </p>
     </div>
+  );
+}
+
+export default function StoryGalleryPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-zinc-950 text-white flex items-center justify-center">
+          <p className="text-zinc-400">
+            Loading gallery...
+          </p>
+        </div>
+      }
+    >
+      <StoryGalleryContent />
+    </Suspense>
   );
 }
