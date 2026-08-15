@@ -44,7 +44,7 @@ export const cities: Record<string, CityData> = {
       "Our Madurai wedding photography combines candid moments, traditional Tamil wedding rituals, natural couple portraits, bridal portraits, family celebrations, and cinematic storytelling. We focus on real emotions and meaningful details so every wedding gallery feels personal to the couple and their family.",
     
     localAreas:
-  "We serve couples across Madurai and nearby areas, including Anna Nagar, KK Nagar, Tallakulam, Arapalayam, Thiruppalai, Villapuram, and surrounding wedding venues.",
+      "We serve couples across Madurai and nearby areas, including Anna Nagar, KK Nagar, Tallakulam, Arapalayam, Thiruppalai, Villapuram, and surrounding wedding venues.",
 
       faq: [
         {

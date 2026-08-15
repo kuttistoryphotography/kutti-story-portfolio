@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import PageLoader from "@/components/PageLoader";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -132,8 +132,8 @@ export default function RootLayout({
       <body
         className={`${heading.variable} ${body.variable} antialiased bg-white text-neutral-900`}
       >
-        <PageLoader>{children}</PageLoader>
-        <FloatingWhatsApp />
+        {children}
+      <FloatingWhatsApp />
       </body>
     </html>
   );

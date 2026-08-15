@@ -12,6 +12,7 @@ import BookingCTA from "@/components/BookingCTA";
 import Footer from "@/components/layout/Footer";
 import { connectDB } from "@/lib/mongodb";
 import Homepage from "@/models/Homepage";
+import OpeningIntro from "@/components/OpeningIntro";
 
 export default async function Home() {
   await connectDB();
@@ -109,6 +110,7 @@ export default async function Home() {
           })
         }}
       />
+      <OpeningIntro />
       <Navbar />
       <HeroSlider initialHeroImage={initialHeroImage} />
       <FeaturedGallery />
